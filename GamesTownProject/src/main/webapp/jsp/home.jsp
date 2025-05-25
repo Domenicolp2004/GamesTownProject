@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<head>
+<html>
+ <head>
     <title>GamesTown</title>
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
 </head>
-<body>
+ <body>
 <div class="container">
 
     <aside class="sidebar">
@@ -25,9 +26,7 @@
     <main class="main-content">
 
         <!-- HEADER centrale -->
-        <section class="hero">
-            <img src="../images/hero.jpg" alt="La città del gioco" class="hero-image">
-        </section>
+ 
 
         <!-- PRODOTTI: portfolio style -->
         <section class="prodotti">
@@ -71,6 +70,9 @@
                 </div>
              </div>
              </section>
+                    <section class="hero">
+            <img src="../images/citta.jpg" alt="La città del gioco" class="citta-image">
+        </section>
                  <section class="prodotti">
             <h2>Più venduti </h2>
             <div class="product-grid">
