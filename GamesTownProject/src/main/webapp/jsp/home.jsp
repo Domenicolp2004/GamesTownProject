@@ -26,7 +26,7 @@
 <a href="#"> <button class="button">Cerca</button></a>
 </div>
 <div class="content">
-<h1>Carrello <br><span>Registrati</span> <br>Aggiornamenti</h1>
+
 </div>
 </div>
 </div>
