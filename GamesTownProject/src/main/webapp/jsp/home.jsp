@@ -12,6 +12,22 @@
 <div class="navbar">
 <div class="icon">
 <h2 class="logo">GamesTown</h2>
+<div class="menu">
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">PRODOTTI</a></li>
+<li><a href="#">LOGIN</a></li>
+<li><a href="#">NEWS</a></li>
+<li><a href="#">CONTATTI</a></li>
+</ul>
+</div>
+<div class="search">
+<input class="srch" type="search" name="" placeholder="Cerca prodotto">
+<a href="#"> <button class="button">Cerca</button></a>
+</div>
+<div class="content">
+<h1>Carrello <br><span>Registrati</span> <br>Aggiornamenti</h1>
+</div>
 </div>
 </div>
 </div>
