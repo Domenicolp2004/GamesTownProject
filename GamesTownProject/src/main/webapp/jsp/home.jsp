@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GamesTown</title>
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
-
+<div class="main">
+<div class="navbar">
+<div class="icon">
+<h2 class="logo">GamesTown</h2>
+</div>
+</div>
+</div>
 </body>
 </html>
