@@ -1,1 +1,91 @@
-@charset "UTF-8";
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7c20c; /* giallo scuro */
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 250px;
+    grid-template-rows: auto;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #000000;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    margin: 15px 0;
+}
+
+.nav a {
+    color: #ffcc00; /* giallo */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #ff9900; /* arancio */
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #f7c20c;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.prodotti {
+    margin-top: 30px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.product-item {
+    background-color: #2e2e6f;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.news-section {
+    background-color: #18184a;
+    padding: 20px;
+}
+
+.news-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-section li {
+    margin: 10px 0;
+}
