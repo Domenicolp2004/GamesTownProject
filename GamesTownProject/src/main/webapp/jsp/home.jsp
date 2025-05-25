@@ -25,54 +25,35 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <!-- HEADER centrale -->
- 
+ <form action="/cerca" method="get">
+    <input type="search" name="cerca" placeholder="Cerca prodotto">
+    <button type="submit">Cerca</button>
+  </form>
 
         <!-- PRODOTTI: portfolio style -->
         <section class="prodotti">
             <h2>In evidenza</h2>
             <div class="product-grid">
                 <div class="product-item">
-                    <img src="../images/game1.jpg" alt="Game 1">
+                    <img src="../images/fc.jpg" alt="fifa">
                     <p>FC25</p>
                 </div>
                 <div class="product-item">
-                    <img src="../images/game2.jpg" alt="Game 2">
+                    <img src="../images/cod.jpg" alt="cod">
+                    <p>Call of Duty</p>
+                </div>
+                <div class="product-item">
+                    <img src="../images/minecraft.jpg" alt="Minecraft">
                     <p>Minecraft</p>
                 </div>
-                <div class="product-item">
-                    <img src="../images/game3.jpg" alt="Game 3">
-                    <p>Call Of Duty</p>
+       		<div class="product-item">
+                    <img src="../images/lego.jpg" alt="lego">
+                    <p>Lego Horizons</p>
                 </div>
-                <div class="product-item">
-                    <img src="../images/game1.jpg" alt="Game 4">
-                    <p>FC25</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game2.jpg" alt="Game 5">
-                    <p>Minecraft</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game3.jpg" alt="Game 6">
-                    <p>Call Of Duty</p>
-                </div>
-                  <div class="product-item">
-                    <img src="../images/game1.jpg" alt="Game 1">
-                    <p>FC25</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game2.jpg" alt="Game 2">
-                    <p>Minecraft</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game3.jpg" alt="Game 3">
-                    <p>Call Of Duty</p>
-                </div>
+          
              </div>
              </section>
-                    <section class="hero">
-            <img src="../images/citta.jpg" alt="La città del gioco" class="citta-image">
-        </section>
+                 
                  <section class="prodotti">
             <h2>Più venduti </h2>
             <div class="product-grid">
@@ -119,11 +100,11 @@
 
     <!-- COLONNA DESTRA: News -->
     <aside class="news-section">
-        <h3>Ultime News</h3>
+       <img src="../images/cartello.png" alt="News" class="news" width=100%>
         <ul>
-            <li>🎮 Nuove uscite PS5!</li>
-            <li>🔥 Nuove uscite XBOX</li>
-            <li>🛠️ Titoli più popolari</li>
+            <li>Nuove uscite PS5!</li>
+            <li>Nuove uscite XBOX</li>
+            <li>Titoli più popolari</li>
         </ul>
     </aside>
 

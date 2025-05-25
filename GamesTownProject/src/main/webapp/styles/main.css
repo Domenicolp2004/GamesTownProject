@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #000000; /* giallo scuro */
     color: white;
+    
 }
 
 .container {
@@ -16,6 +17,8 @@ body {
 .sidebar {
     background-color: #000000;
     padding: 20px;
+    text-align: center;
+   border-right: 3px solid #f3f1ec;
 }
 
 .logo {
@@ -43,7 +46,7 @@ body {
 }
 
 .main-content {
-    padding: 20px;
+    padding: 70%x;
     background-color: #000000;
 }
 
@@ -76,8 +79,8 @@ body {
 }
 
 .product-item img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -85,6 +88,8 @@ body {
 .news-section {
     background-color: #000000;
     padding: 20px;
+    border-left: 3px solid #f3f1ec;
+    text-align: center;
 }
 
 .news-section ul {
@@ -93,5 +98,38 @@ body {
 }
 
 .news-section li {
-    margin: 10px 0;
+    margin: 30px 0;
 }
+
+ form {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  input[type="search"] {
+ color: white;
+ display: flex;
+  background-color: #000000;
+  padding: 15px;
+  width: 400px;
+  border: 4px solid #43bf0a;
+  box-shadow: 0 0 10px #43bf0a;
+  border-radius: 4px;;
+  }
+
+  button {
+  background-color: #000;
+  color: #43bf0a;
+  border: 2px solid #43bf0a;
+  padding: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  }
+
+  button:hover {
+    background-color: #51a833;
+  }
+  
+
+  
