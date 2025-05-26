@@ -7,10 +7,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
 </head>
  <body>
-<div class="container">
+<div class="cont">
 
    
-        <img src="../images/logo trasparente 4.png" alt="GamesTown Logo" class="logo">
     
     <main class="main-content">
 <nav class="nav">
