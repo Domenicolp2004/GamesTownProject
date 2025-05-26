@@ -7,9 +7,10 @@
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
 </head>
  <body>
-<div class="cont">
+<div class="container">
 
    
+        <img src="../images/logo trasparente 4.png" alt="GamesTown Logo" class="logo">
     
     <main class="main-content">
 <nav class="nav">
@@ -82,6 +83,7 @@
                   <div class="product-item">
                     <img src="../images/game1.jpg" alt="Game 1">
                     <p>FC25</p>
+                    </div>
                 <div class="product-item">
                     <img src="../images/game2.jpg" alt="Game 2">
                     <p>Minecraft</p>
@@ -102,7 +104,6 @@
                 <li><a href="registrazione.jsp">Registrati</a></li>
                 </ul>
                 </nav>
-        <ul>
     
 
 </div>
