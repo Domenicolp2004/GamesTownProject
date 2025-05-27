@@ -22,21 +22,17 @@
   </div>
     
     <main class="main-content">
-<nav class="nav">
-            <ul>
-                <li><a href="home.jsp">Home</a></li>
-                <li><a href="prodotti.jsp">Prodotti</a></li>
-                <li><a href="news.jsp">News</a></li>
-                <li><a href="contatti.jsp">Contatti</a></li>
-               <li>           <form action="cerca" method="get">
-    <input type="search" name="cerca" placeholder="Cerca prodotto">
-    <button type="submit">Cerca</button>
-  </form></li>
-                </ul>
-             
- 
-        </nav>
- 
+<div class="topnav" id="myTopnav">
+  <a href="home.jsp" class="active">Home</a>
+  <a href="news.jsp">News</a>
+  <a href="">Contatti</a>
+  <a href="prodotti.jsp">Prodotti</a>
+
+<div class="loginbar" id="myLoginbar">
+                <a href="login.jsp">Login</a>
+                <a href="registrazione.jsp">Registrati</a>
+  </div>
+</div>
 
         <!-- PRODOTTI: portfolio style -->
         <section class="prodotti">
@@ -106,14 +102,7 @@
              
     </main>
 
-       <nav class="nav">
-        <ul>
-                <li><a href="login.jsp">Login</a></li>
-                <li><a href="registrazione.jsp">Registrati</a></li>
-                </ul>
-                                
-
-                </nav>
+       
 
 </div>
 
