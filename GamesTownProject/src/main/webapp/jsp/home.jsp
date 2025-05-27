@@ -9,8 +9,17 @@
  <body>
 <div class="container">
 
-   
+   <div class="sidebar">
         <img src="../images/logo trasparente 4.png" alt="GamesTown Logo" class="logo">
+        		<div class="dropdown">
+  <button class="dropbtn">Categorie</button>
+  <div class="dropdown-content">
+    <a href="#">Arcade</a>
+    <a href="#">Sparatutto</a>
+    <a href="#">Sport</a>
+  </div>
+  </div>
+  </div>
     
     <main class="main-content">
 <nav class="nav">
@@ -97,15 +106,20 @@
              
     </main>
 
-
        <nav class="nav">
         <ul>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="registrazione.jsp">Registrati</a></li>
                 </ul>
+                                
+
                 </nav>
-    
 
 </div>
+
+
+    
+
+
 </body>
 </html>

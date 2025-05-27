@@ -63,15 +63,6 @@ body {
     background-color: #000000;
 }
 
-.citta-image {
-    width: 70%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 30px;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .prodotti {
     margin-top: 30px;
@@ -119,7 +110,7 @@ body {
   }
 
   button {
-  background-color: #000;
+  background-color: #000000;
   color: #43bf0a;
   border: 2px solid #43bf0a;
   padding: 10px;
@@ -130,6 +121,42 @@ body {
   button:hover {
     background-color: #51a833;
   }
-  
+
+.dropbtn {
+  background-color: #43bf0a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #43bf0a;
+color:white;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
 
   
