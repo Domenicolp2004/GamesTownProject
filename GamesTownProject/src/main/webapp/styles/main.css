@@ -14,7 +14,6 @@ body {
  
 }
 
-
 .logo {
     width: 100px;
     margin-top: 5px;
@@ -199,5 +198,23 @@ color:white;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+.news-section h3{
+	text-align: center;
+}
+.news-section {
+    text-align: right;
+    background-color: #000000;
+    padding: 20px;
+    margin-top:0px;
+}
+
+.news-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-section li {
+    margin: 10px 0;
+}
 
   
