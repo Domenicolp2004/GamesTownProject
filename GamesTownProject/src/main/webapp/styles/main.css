@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000000; /* giallo scuro */
+    background-color: #222222; /* giallo scuro */
     color: white;
     
 }
@@ -15,9 +15,9 @@ body {
 }
 
 .logo {
-    width: 100px;
-    margin-top: 5px;
-    margin-left: 5px;
+    width: 150px;
+    margin-top: 2px;
+    margin-left: 22px;
 }
 
 .nav{
@@ -48,11 +48,11 @@ body {
 
 .nav a:hover {
     color: #43bf0a;
-  background-color: #000000; /* arancio */
+  background-color: #222222; /* arancio */
 }
 
 .topnav {
-  background-color: #000000;
+  background-color: #222222;
   overflow: hidden;
 }
 
@@ -100,7 +100,7 @@ body {
 
 .main-content {
     padding: 70%x;
-    background-color: #000000;
+    background-color: #222222;
 }
 
 
@@ -132,25 +132,25 @@ body {
 
  form {
     display: flex;
-    justify-content: center;
-    margin-top: 0px;
-    margin-left: 300px;
-    align-items:right;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 0px;
+    align-items:left;
   }
 
   input[type="search"] {
  
  color: white;
-  background-color: #000000;
-  padding: 15px;
-  width: 400px;
-  border: 4px solid #43bf0a;
+  background-color: #222222;
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #43bf0a;
   box-shadow: 0 0 10px #43bf0a;
-  border-radius: 4px;
+  border-radius: 2px;
   }
 
   button {
-  background-color: #000000;
+  background-color: #222222;
   color: #43bf0a;
   border: 2px solid #43bf0a;
   padding: 10px;
@@ -173,6 +173,7 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-left: 25px;
 }
 
 .dropdown-content {
@@ -203,7 +204,7 @@ color:white;}
 }
 .news-section {
     text-align: right;
-    background-color: #000000;
+    background-color: #222222;
     padding: 20px;
     margin-top:0px;
 }
@@ -217,4 +218,11 @@ color:white;}
     margin: 10px 0;
 }
 
-  
+.immag{
+	 display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+

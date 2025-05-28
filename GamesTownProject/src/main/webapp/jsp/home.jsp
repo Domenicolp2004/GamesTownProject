@@ -12,14 +12,7 @@
 
    <div class="sidebar">
         <img src="../images/logo trasparente 4.png" alt="GamesTown Logo" class="logo">
-        		<div class="dropdown">
-  <button class="dropbtn">Categorie</button>
-  <div class="dropdown-content">
-    <a href="#">Arcade</a>
-    <a href="#">Sparatutto</a>
-    <a href="#">Sport</a>
-  </div>
-  </div>
+        		
   </div>
     
     <main class="main-content">
@@ -33,11 +26,20 @@
                 <a href="registrazione.jsp">Registrati</a>
   </div>
 </div>
+	
 	<form action="#" method="post">
     <input type="search" name="q" placeholder="Cerca qualcosa..." />
     <button type="submit">Cerca</button>
+    	<div class="dropdown">
+  <button class="dropbtn">Categorie</button>
+  <div class="dropdown-content">
+    <a href="#">Arcade</a>
+    <a href="#">Sparatutto</a>
+    <a href="#">Sport</a>
+  </div>
+  </div>
   </form>
-	 
+
         <!-- PRODOTTI: portfolio style -->
         <section class="prodotti">
             <h2>In evidenza</h2>
@@ -61,6 +63,13 @@
           
              </div>
              </section>
+             <div class="immag">
+             
+             <img src="../images/sito.jpg" alt="sito" width=1300px height=auto>
+             
+             
+             </div>
+          
         
                  <section class="prodotti">
             <h2>Più venduti </h2>
