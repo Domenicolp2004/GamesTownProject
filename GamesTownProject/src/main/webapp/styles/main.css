@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     background-color: #222222; /* giallo scuro */
     color: white;
     
@@ -26,9 +26,7 @@ body {
 }
 
 
-.nav ul {
-	
-}
+
 
 .nav li {
     margin: 15px 0;
@@ -132,32 +130,25 @@ body {
 }
 
 
- form {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 40px;
-    margin-left: 0px;
-    align-items:left;
-  }
-
-  input[type="search"] {
+ .search-bar {
+    background-color: #1c1c1c;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 30px;
+    color: white;
+    width: 250px;
+    font-size: 14px;
+    margin-top:40px;
+}
  
- color: white;
-  background-color: #222222;
-  padding: 10px;
-  width: 200px;
-  border: 5px solid #000000;
-  box-shadow: 0 0 10px #000000;
-  border-radius: 5px;
-  }
 
   button {
-  background-color: #222222;
-  color: #ffffff;
-  border: 5px solid #000000;
-  padding: 10px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 12px;
+  background: #2a2a2a;
+    border: none;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 6px;
+    cursor: pointer;
   }
 
   button:hover {

@@ -6,8 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesTown</title>
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
 </head>
  <body>
+ 
 <div class="container">
 
    <div class="sidebar">
@@ -29,21 +31,17 @@
   <a href="news.jsp">News</a>
   <a href="">Contatti</a>
   <a href="prodotti.jsp">Prodotti</a>
- 
 </div>
 	
-	<form action="#" method="post">
-    <input type="search" name="q" placeholder="Cerca qualcosa..." />
+	<input type="text" placeholder="🔍 Cerca nel negozio" class="search-bar">
     <button type="submit">Cerca</button>
     	
-  </form>
-
+    	
      <div class="titolo">Prodotti in Vendita</div>
 
   <div class="catalogo">
-    <div class="prodotto">
   
-      
+    <div class="prodotto">
        <img src="../images/fc.jpg" alt="fifa">
        <div class="nome">FC 25</div>
       <div class="prezzo">€29,99</div>
@@ -51,8 +49,6 @@
 
 
     <div class="prodotto">
-  
-      
       <img src="../images/cod.jpg" alt="cod">
       <div class="nome">Call of duty Black Ops 6</div>
       <div class="prezzo">€45,00</div>
@@ -66,57 +62,31 @@
     
        <div class="prodotto">
            <img src="../images/minecraft.jpg" alt="Minecraft">
-      <div class="nome">Minecraft</div>
-      <div class="prezzo">€15,50</div>
+      <div class="nome">Nba 2K25</div>
+      <div class="prezzo">€55,50</div>
     </div>
     
        <div class="prodotto">
            <img src="../images/minecraft.jpg" alt="Minecraft">
-      <div class="nome">Minecraft</div>
+      <div class="nome">Red Dead Redemption 2</div>
       <div class="prezzo">€15,50</div>
     </div>
   </div>
-        
-        
-        
-       
              <div class="immag">
-             
              <img src="../images/sito.jpg" alt="sito" width=1200px height=auto>
-             
-             
              </div>
-          
-        
                  <section class="prodotti">
-            <h2>Più venduti </h2>
-           
-             </section>
-             
+            <h2> Più venduti </h2>
+             </section>    
     </main>
+    
 <aside class="news-section">
 <div class="loginbar" id="myLoginbar">
-                <a href="login.jsp">Login</a>
-                <a href="registrazione.jsp">Registrati</a>
-
-
-  </div>
-        
-    
-    
-    
-    
-    
-    
+                <button class="lang-btn">🌐</button>
+                <button onclick="location.href='login.jsp'" class="btn">Login</button>
+                <button onclick="location.href='registrazione.jsp'" class="btn">Registrazione</button>
+  </div>    
     </aside>
-
-       
-
 </div>
-
-
-    
-
-
 </body>
 </html>
