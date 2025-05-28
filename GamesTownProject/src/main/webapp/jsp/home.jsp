@@ -11,6 +11,7 @@
 <div class="container">
 
    <div class="sidebar">
+
         <img src="../images/logo trasparente 4.png" alt="GamesTown Logo" class="logo">
         		
   </div>
@@ -21,10 +22,6 @@
   <a href="news.jsp">News</a>
   <a href="">Contatti</a>
   <a href="prodotti.jsp">Prodotti</a>
-<div class="loginbar" id="myLoginbar">
-                <a href="login.jsp">Login</a>
-                <a href="registrazione.jsp">Registrati</a>
-  </div>
 </div>
 	
 	<form action="#" method="post">
@@ -40,32 +37,51 @@
   </div>
   </form>
 
-        <!-- PRODOTTI: portfolio style -->
-        <section class="prodotti">
-            <h2>In evidenza</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="../images/fc.jpg" alt="fifa">
-                    <p>FC25</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/cod.jpg" alt="cod">
-                    <p>Call of Duty</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/minecraft.jpg" alt="Minecraft">
-                    <p>Minecraft</p>
-                </div>
-       		<div class="product-item">
-                    <img src="../images/lego.jpg" alt="lego">
-                    <p>Lego Horizons</p>
-                </div>
-          
-             </div>
-             </section>
+     <div class="titolo">Prodotti in Vendita</div>
+
+  <div class="catalogo">
+    <div class="prodotto">
+  
+      
+       <img src="../images/fc.jpg" alt="fifa">
+       <div class="nome">FC 25</div>
+      <div class="prezzo">€29,99</div>
+    </div>
+
+
+    <div class="prodotto">
+  
+      
+      <img src="../images/cod.jpg" alt="cod">
+      <div class="nome">Call of duty Black Ops 6</div>
+      <div class="prezzo">€45,00</div>
+    </div>
+
+    <div class="prodotto">
+           <img src="../images/minecraft.jpg" alt="Minecraft">
+      <div class="nome">Minecraft</div>
+      <div class="prezzo">€15,50</div>
+    </div>
+    
+       <div class="prodotto">
+           <img src="../images/minecraft.jpg" alt="Minecraft">
+      <div class="nome">Minecraft</div>
+      <div class="prezzo">€15,50</div>
+    </div>
+    
+       <div class="prodotto">
+           <img src="../images/minecraft.jpg" alt="Minecraft">
+      <div class="nome">Minecraft</div>
+      <div class="prezzo">€15,50</div>
+    </div>
+  </div>
+        
+        
+        
+       
              <div class="immag">
              
-             <img src="../images/sito.jpg" alt="sito" width=1300px height=auto>
+             <img src="../images/sito.jpg" alt="sito" width=1200px height=auto>
              
              
              </div>
@@ -73,71 +89,16 @@
         
                  <section class="prodotti">
             <h2>Più venduti </h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="../images/game1.jpg" alt="Game 1">
-                    <p>FC25</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game2.jpg" alt="Game 2">
-                    <p>Minecraft</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game3.jpg" alt="Game 3">
-                    <p>Call Of Duty</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game1.jpg" alt="Game 4">
-                    <p>FC25</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game2.jpg" alt="Game 5">
-                    <p>Minecraft</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game3.jpg" alt="Game 6">
-                    <p>Call Of Duty</p>
-                </div>
-                  <div class="product-item">
-                    <img src="../images/game1.jpg" alt="Game 1">
-                    <p>FC25</p>
-                    </div>
-                <div class="product-item">
-                    <img src="../images/game2.jpg" alt="Game 2">
-                    <p>Minecraft</p>
-                </div>
-                <div class="product-item">
-                    <img src="../images/game3.jpg" alt="Game 3">
-                    <p>Call Of Duty</p>
-                </div>
-             </div>
+           
              </section>
              
     </main>
 <aside class="news-section">
-        <h3>Ultime News</h3>
-        <ul>
-            <li>GTA VI trailer rilasciato</li> 
-            <li>Elden Ring DLC in arrivo</li> 
-            <li>Nintendo annuncia console</li> 
-            <li>Xbox acquisisce studio</li> 
-            <li>PlayStation 6 leak</li> 
-            <li>Steam fest autunno</li> 
-            <li>Cyberpunk 2077 aggiornamento</li>
-            <li>The Sims 5 gameplay</li> 
-            <li>Fortnite mappa classica</li> 
-            <li>Call of Duty gratis</li>
-            <li>Zelda riceve spin-off</li> 
-            <li>Hollow Knight: Silksong rimandato</li>
-            <li>Among Us nuova modalità</li>
-            <li>Assassin’s Creed in Giappone</li>
-            <li>LoL aggiornamento massiccio</li>
-            <li>Minecraft 300 milioni di vendite</li>
-            <li>Valorant su console</li>
-            <li>FIFA cambia nome</li> 
-            <li>Baldur's Gate 3 premi</li> 
-            <li>Silent Hill remake gameplay</li>
-        </ul>
+<div class="loginbar" id="myLoginbar">
+                <a href="login.jsp">Login</a>
+                <a href="registrazione.jsp">Registrati</a>
+  </div>
+        
     </aside>
 
        

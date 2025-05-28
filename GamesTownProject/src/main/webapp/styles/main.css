@@ -54,6 +54,7 @@ body {
 .topnav {
   background-color: #222222;
   overflow: hidden;
+  margin-left:0px;
 }
 
 /* Style the links inside the navigation bar */
@@ -65,6 +66,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  
 }
 
 /* Change the color of links on hover */
@@ -144,27 +146,28 @@ body {
   background-color: #222222;
   padding: 10px;
   width: 300px;
-  border: 2px solid #43bf0a;
-  box-shadow: 0 0 10px #43bf0a;
+  border: 2px solid #000000;
+  box-shadow: 0 0 10px #000000;
   border-radius: 2px;
   }
 
   button {
   background-color: #222222;
-  color: #43bf0a;
-  border: 2px solid #43bf0a;
+  color: #ffffff;
+  border: 2px solid #000000;
   padding: 10px;
   font-family: 'Press Start 2P', monospace;
   font-size: 12px;
   }
 
   button:hover {
-    background-color: #51a833;
+    background-color: #ffffff;
+    color: black;
   }
 
 .dropbtn {
-  background-color: #43bf0a;
-  color: white;
+  background-color: #ffffff;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -192,12 +195,12 @@ body {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #43bf0a;
+.dropdown-content a:hover {background-color: #43bf04;
 color:white;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #43bf04;}
 
 .news-section h3{
 	text-align: center;
@@ -205,19 +208,14 @@ color:white;}
 .news-section {
     text-align: right;
     background-color: #222222;
-    padding: 20px;
     margin-top:0px;
+   
 }
 
-.news-section ul {
-    list-style: none;
-    padding: 0;
+.news-section a:hover {
+  background-color: #ffffff;
+  color: black;
 }
-
-.news-section li {
-    margin: 10px 0;
-}
-
 .immag{
 	 display: flex;
   justify-content: center;
@@ -226,3 +224,72 @@ color:white;}
 
 
 
+.titolo {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+.catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+  
+
+    .prodotto {
+      background-color:#222222 ;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .prodotto:hover {
+      transform: scale(1.05);
+    }
+
+    .prodotto img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .nome {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .prezzo {
+      font-size: 16px;
+      color: #27ae60;
+      font-weight: bold;
+    }
+      
+
+.prodotto:hover {
+      transform: scale(1.05);
+    }
+
+.prodotto img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+.nome {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+.prezzo {
+      font-size: 16px;
+      color: #27ae60;
+      font-weight: bold;
+    }
