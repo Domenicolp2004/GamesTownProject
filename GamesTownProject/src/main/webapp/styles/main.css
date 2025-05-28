@@ -135,7 +135,7 @@ body {
  form {
     display: flex;
     justify-content: flex-start;
-    margin-top: 25px;
+    margin-top: 40px;
     margin-left: 0px;
     align-items:left;
   }
@@ -145,16 +145,16 @@ body {
  color: white;
   background-color: #222222;
   padding: 10px;
-  width: 300px;
-  border: 2px solid #000000;
+  width: 200px;
+  border: 5px solid #000000;
   box-shadow: 0 0 10px #000000;
-  border-radius: 2px;
+  border-radius: 5px;
   }
 
   button {
   background-color: #222222;
   color: #ffffff;
-  border: 2px solid #000000;
+  border: 5px solid #000000;
   padding: 10px;
   font-family: 'Press Start 2P', monospace;
   font-size: 12px;
@@ -168,15 +168,16 @@ body {
 .dropbtn {
   background-color: #ffffff;
   color: black;
-  padding: 16px;
+ padding: 16px;
   font-size: 16px;
   border: none;
+  margin-left:44px;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-left: 25px;
+ 
 }
 
 .dropdown-content {
@@ -190,7 +191,7 @@ body {
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+    padding: 14px 16px;
   text-decoration: none;
   display: block;
 }
@@ -229,7 +230,7 @@ color:white;}
       margin-bottom: 30px;
       font-size: 28px;
       font-weight: bold;
-      margin-top: 40px;
+      margin-top: 15px;
     }
 
 .catalogo {
