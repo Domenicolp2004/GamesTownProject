@@ -25,9 +25,6 @@ body {
   overflow: hidden;
 }
 
-
-
-
 .nav li {
     margin: 15px 0;
   display: inline;
@@ -89,7 +86,7 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -159,10 +156,10 @@ body {
 .dropbtn {
   background-color: #ffffff;
   color: black;
- padding: 16px;
+  padding: 16px;
   font-size: 16px;
   border: none;
-  margin-left:44px;
+  margin-left:20px;
 }
 
 .dropdown {
@@ -208,6 +205,8 @@ color:white;}
   background-color: #ffffff;
   color: black;
 }
+
+
 .immag{
 	 display: flex;
   justify-content: center;
@@ -285,3 +284,7 @@ color:white;}
       color: #27ae60;
       font-weight: bold;
     }
+    
+.prodotti {
+	text-align: center;
+}

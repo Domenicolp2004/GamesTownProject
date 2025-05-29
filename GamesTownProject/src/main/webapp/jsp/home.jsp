@@ -15,14 +15,7 @@
    <div class="sidebar">
 
         <img src="../images/logo trasparente 4.png" alt="GamesTown Logo" class="logo">
-        		 <div class="dropdown">
-  <button class="dropbtn">Categorie</button>
-  <div class="dropdown-content">
-    <a href="#">Arcade</a>
-    <a href="#">Sparatutto</a>
-    <a href="#">Sport</a>
-  </div>
-  </div>
+        		 
   </div>
     
     <main class="main-content">
@@ -34,7 +27,15 @@
 </div>
 	
 	<input type="text" placeholder="🔍 Cerca nel negozio" class="search-bar">
-    <button type="submit">Cerca</button>
+    <button type="submit">Cerca</button> 
+    <div class="dropdown">
+  <button class="dropbtn">Categorie</button>
+  <div class="dropdown-content">
+    <a href="#">Arcade</a>
+    <a href="#">Sparatutto</a>
+    <a href="#">Sport</a>
+  </div>
+  </div>
     	
     	
      <div class="titolo">Prodotti in Vendita</div>
@@ -43,15 +44,15 @@
   
     <div class="prodotto">
        <img src="../images/fc.jpg" alt="fifa">
-       <div class="nome">FC 25</div>
-      <div class="prezzo">€29,99</div>
+       <div class="nome">FC 25 Standard Edition</div>
+      <div class="prezzo">€59,99</div>
     </div>
 
 
     <div class="prodotto">
       <img src="../images/cod.jpg" alt="cod">
       <div class="nome">Call of duty Black Ops 6</div>
-      <div class="prezzo">€45,00</div>
+      <div class="prezzo">€69,90</div>
     </div>
 
     <div class="prodotto">
@@ -61,15 +62,15 @@
     </div>
     
        <div class="prodotto">
-           <img src="../images/minecraft.jpg" alt="Minecraft">
-      <div class="nome">Nba 2K25</div>
-      <div class="prezzo">€55,50</div>
+           <img src="../images/nba.jpg" alt="Minecraft">
+      <div class="nome">Nba 2K25 Standard Edition</div>
+      <div class="prezzo">€69,90</div>
     </div>
     
        <div class="prodotto">
-           <img src="../images/minecraft.jpg" alt="Minecraft">
-      <div class="nome">Red Dead Redemption 2</div>
-      <div class="prezzo">€15,50</div>
+           <img src="../images/f1-25.jpg" alt="Minecraft">
+      <div class="nome">F1 25 Iconic Edition</div>
+      <div class="prezzo">€89,90</div>
     </div>
   </div>
              <div class="immag">
