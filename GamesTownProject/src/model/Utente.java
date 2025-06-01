@@ -6,15 +6,14 @@ public class Utente {
     private String nome;
     private String cognome;
     private String ruolo;
-    private Date data_registrazione;
+
     
 public Utente{
 	
 }
 
-public Utente(String id, String email, String password, String nome, String cognome, String ruolo, Date data_registrazione)
+public Utente(String id, String email, String password, String nome, String cognome, String ruolo)
     this.cognome= cognome;
-    this.data_registrazione= data_registrazione;
     this.email= email;
     this.id= id;
     this.nome= nome;
@@ -65,11 +64,4 @@ public String getRuolo() {
 
 public void setRuolo(String ruolo) {
 	this.ruolo= ruolo;
-}
-public String getData_registrazione() {
-	return data_registrazione;
-}
-
-public void setData_registrazione(Date data_registrazione) {
-	this.data_registrazione= data_registrazione;
 }

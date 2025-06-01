@@ -18,7 +18,7 @@ form {
     
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="nome"], input[type="cognome"] {
     width: 100%;
     padding: 16px 20px;
     margin: 12px 0;

@@ -14,6 +14,12 @@
     <h1 align="center">Registrati</h1>
  
 
+    <label for="nome"><b>Nome</b></label>
+    <input type="text" placeholder="Nome" name="nome" required>
+    
+     <label for="cognome"><b>Cognome</b></label>
+    <input type="text" placeholder="Cognome" name="cognome" required>
+    
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Email" name="email" required>
 
@@ -23,13 +29,11 @@
     <label for="psw-repeat"><b>Ripeti Password</b></label>
     <input type="password" placeholder="Password" name="psw-repeat" required>
 
-<a href="password-dimenticata.jsp" class="forgot-password">Hai dimenticato la password?</a>
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Annulla</button>
       <button type="submit" class="signupbtn">Registrati</button>
       <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
     </div>
   </div>
