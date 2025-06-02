@@ -18,7 +18,7 @@ public class RegistrazioneServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/gamestown", "root", "KAknkcniwo92--!");
+                "jdbc:mysql://127.0.0.1:3306/gamestown", "tuo_utente", "tua_password");
 
             UtenteDAO dao = new UtenteDAO(conn);
             boolean success = dao.registraUtente(nuovoUtente);
