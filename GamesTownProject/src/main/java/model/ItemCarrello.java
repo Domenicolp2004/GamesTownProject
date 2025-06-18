@@ -13,6 +13,10 @@ public class ItemCarrello {
         return videogioco;
     }
 
+    public void setVideogioco(Videogioco videogioco) {
+        this.videogioco = videogioco;
+    }
+
     public int getQuantita() {
         return quantita;
     }
