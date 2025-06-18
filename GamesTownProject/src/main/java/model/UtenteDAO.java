@@ -16,7 +16,7 @@ public class UtenteDAO {
         String sql = "SELECT * FROM utente WHERE email = ? AND password = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, email);
-            stmt.setString(2, password); // usa hash se implementato
+            stmt.setString(2, password); 
 
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
@@ -40,7 +40,7 @@ public class UtenteDAO {
             stmt.setString(1, utente.getNome());
             stmt.setString(2, utente.getCognome());
             stmt.setString(3, utente.getEmail());
-            stmt.setString(4, utente.getPassword()); // usa hash se implementato
+            stmt.setString(4, utente.getPassword()); 
             stmt.setString(5, utente.getRuolo());
 
             int result = stmt.executeUpdate();
