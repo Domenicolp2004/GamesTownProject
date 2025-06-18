@@ -23,6 +23,10 @@
                     <p>Genere: <%= v.getGenere() %></p>
                     <p>Piattaforma: <%= v.getPiattaforma() %></p>
                     <p>Data di uscita: <%= v.getDataUscita() %></p>
+                    <form action="<%= request.getContextPath() %>/AddCarrelloServlet" method="post">
+   				 <input type="hidden" name="id" value="<%= v.getId() %>"/>
+   				 <button type="submit">Aggiungi al carrello</button>
+</form>
                 </div>
     <%
             }

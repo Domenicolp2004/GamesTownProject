@@ -33,6 +33,28 @@ public List<Videogioco> getAllVideogiochi() throws SQLException {
     }
     return lista;
 }
+
+public Videogioco getVideogiocoById(int id) throws SQLException {
+    String sql = "SELECT * FROM videogioco WHERE id=?";
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, id);
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                Videogioco v = new Videogioco();
+                v.setId(rs.getInt("id"));
+                v.setTitolo(rs.getString("titolo"));
+                v.setDescrizione(rs.getString("descrizione"));
+                v.setPrezzo(rs.getDouble("prezzo"));
+                v.setDataUscita(rs.getString("dataUscita"));
+                v.setGenere(rs.getString("genere"));
+                v.setPiattaforma(rs.getString("piattaforma"));
+                v.setImmagine(rs.getString("immagine"));
+                return v;
+            }
+        }
+    }
+    return null;
+}
 //funzioni per l'amministratore:
 
 public boolean insertVideogioco(Videogioco v) throws SQLException {
