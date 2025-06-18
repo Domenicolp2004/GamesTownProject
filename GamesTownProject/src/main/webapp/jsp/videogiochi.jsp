@@ -8,19 +8,18 @@
 </head>
 <body>
 
-<h1>Videogiochi disponibili</h1>
+<h1 align="center" >Videogiochi disponibili</h1>
 
-<div class="lista-videogiochi">
+<div class="catalogo">
     <%
         List<Videogioco> listaVideogiochi = (List<Videogioco>) request.getAttribute("listaVideogiochi");
         if (listaVideogiochi != null) {
             for (Videogioco v : listaVideogiochi) {
     %>
-                <div class="videogioco">
+                <div class="prodotto">
                     <h2><%= v.getTitolo() %></h2>
                     <img src="<%= request.getContextPath() + "/images/" + v.getImmagine() %>" alt="<%= v.getTitolo() %>" width="200" />
-                    <p><%= v.getDescrizione() %></p>
-                    <p>Genere: <%= v.getGenere() %></p>
+                   	<p>Genere: <%= v.getGenere() %></p>
                     <p>Piattaforma: <%= v.getPiattaforma() %></p>
                     <p>Data di uscita: <%= v.getDataUscita() %></p>
                     <form action="<%= request.getContextPath() %>/AddCarrelloServlet" method="post">
