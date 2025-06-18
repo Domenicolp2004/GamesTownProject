@@ -1,5 +1,8 @@
+package model;
+
 import java.sql.*;
-import model.Utente.java;
+
+import model.Utente;
 
 public class UtenteDAO {
 
@@ -44,3 +47,4 @@ public class UtenteDAO {
             return result > 0;
         }
     }
+}

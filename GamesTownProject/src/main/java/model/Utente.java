@@ -1,31 +1,33 @@
+package model;
+
 public class Utente {
     
-	private String id;
+	private int id;
 	private String email;
     private String password;
     private String nome;
     private String cognome;
     private String ruolo;
 
-    
-public Utente{
-	
+
+ public Utente() {
+       
+    }
+
+public Utente(int id, String email, String password, String nome, String cognome, String ruolo) {
+	this.id= id;
+	this.email= email;
+	this.password= password;
+	this.nome= nome;
+	this.cognome= cognome;
+	this.ruolo= ruolo;
 }
 
-public Utente(String id, String email, String password, String nome, String cognome, String ruolo)
-    this.cognome= cognome;
-    this.email= email;
-    this.id= id;
-    this.nome= nome;
-    this.password= password;
-    this.ruolo= ruolo;
-}
-
-public String getId() {
+public int getId() {
 	return id;
 }
 
-public void setId(String id) {
+public void setId(int id) {
 	this.id= id;
 }
 
@@ -51,7 +53,7 @@ public String getEmail() {
 public void setEmail(String email) {
 	this.email= email;
 }
-public String gePassword() {
+public String getPassword() {
 	return password;
 }
 
@@ -64,4 +66,6 @@ public String getRuolo() {
 
 public void setRuolo(String ruolo) {
 	this.ruolo= ruolo;
+} 
+
 }
