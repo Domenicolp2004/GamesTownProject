@@ -23,7 +23,7 @@
   <a href="home.jsp" class="active">Home</a>
   <a href="news.jsp">News</a>
   <a href="">Contatti</a>
-  <a href="prodotti.jsp">Prodotti</a>
+  <a href="<%= request.getContextPath() %>/VideogiochiServlet">Videogiochi</a>
 </div>
 	
 	<input type="text" placeholder="🔍 Cerca nel negozio" class="search-bar">

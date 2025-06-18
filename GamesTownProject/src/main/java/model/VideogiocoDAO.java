@@ -23,7 +23,8 @@ public List<Videogioco> getAllVideogiochi() throws SQLException {
             v.setId(rs.getInt("id"));
             v.setTitolo(rs.getString("titolo"));
             v.setDescrizione(rs.getString("descrizione"));
-            v.setDataUscita(rs.getString("data_uscita"));
+            v.setPrezzo(rs.getDouble("prezzo"));
+            v.setDataUscita(rs.getString("dataUscita"));
             v.setGenere(rs.getString("genere"));
             v.setPiattaforma(rs.getString("piattaforma"));
             v.setImmagine(rs.getString("immagine"));
@@ -35,27 +36,29 @@ public List<Videogioco> getAllVideogiochi() throws SQLException {
 //funzioni per l'amministratore:
 
 public boolean insertVideogioco(Videogioco v) throws SQLException {
-    String sql = "INSERT INTO videogioco (titolo, descrizione, data_uscita, genere, piattaforma, immagine) VALUES (?, ?, ?, ?, ?, ?)";
+    String sql = "INSERT INTO videogioco (titolo, descrizione, dataUscita, prezzo, genere, piattaforma, immagine) VALUES (?, ?, ?, ?, ?, ?)";
     try (PreparedStatement stmt = conn.prepareStatement(sql)) {
         stmt.setString(1, v.getTitolo());
         stmt.setString(2, v.getDescrizione());
         stmt.setString(3, v.getDataUscita());
-        stmt.setString(4, v.getGenere());
-        stmt.setString(5, v.getPiattaforma());
-        stmt.setString(6, v.getImmagine());
+        stmt.setDouble(4, v.getPrezzo());
+        stmt.setString(5, v.getGenere());
+        stmt.setString(6, v.getPiattaforma());
+        stmt.setString(7, v.getImmagine());
         return stmt.executeUpdate() > 0;
     }
 }
 public boolean updateVideogioco(Videogioco v) throws SQLException {
-    String sql = "UPDATE videogioco SET titolo=?, descrizione=?, data_uscita=?, genere=?, piattaforma=?, immagine=? WHERE id=?";
+    String sql = "UPDATE videogioco SET titolo=?, descrizione=?, dataUscita=?, prezzo=?, genere=?, piattaforma=?, immagine=? WHERE id=?";
     try (PreparedStatement stmt = conn.prepareStatement(sql)) {
         stmt.setString(1, v.getTitolo());
         stmt.setString(2, v.getDescrizione());
         stmt.setString(3, v.getDataUscita());
-        stmt.setString(4, v.getGenere());
-        stmt.setString(5, v.getPiattaforma());
-        stmt.setString(6, v.getImmagine());
-        stmt.setInt(7, v.getId());
+        stmt.setDouble(4, v.getPrezzo());
+        stmt.setString(5, v.getGenere());
+        stmt.setString(6, v.getPiattaforma());
+        stmt.setString(7, v.getImmagine());
+        stmt.setInt(8, v.getId());
         return stmt.executeUpdate() > 0;
     }
 }
