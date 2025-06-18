@@ -36,6 +36,7 @@
     <input type="hidden" name="id" value="<%= videogioco.getId() %>" />
     <button type="submit">Rimuovi</button>
 </form>
+
         </tr>
 <%
         }
@@ -43,7 +44,9 @@
         <tr>
             <td colspan="3"><strong>Totale carrello</strong></td>
             <td><%= carrello.getTotale() %>€</td>
-            <td></td>
+            <td><form action="<%= request.getContextPath() %>/SvuotaCarrelloServlet" method="post">
+    <button type="submit">Svuota carrello</button>
+</form></td>
         </tr>
     </table>
 
