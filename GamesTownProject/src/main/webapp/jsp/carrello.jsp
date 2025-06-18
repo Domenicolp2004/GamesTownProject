@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrello</title>
-    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
+ <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/carrello.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
     Carrello carrello = (Carrello) session.getAttribute("carrello");
     if (carrello == null || carrello.getItems().isEmpty()) {
 %>
-    <p>Il carrello è vuoto.</p>
+    <p class="empty-message">Il carrello è vuoto.</p>
 <%
     } else {
 %>
