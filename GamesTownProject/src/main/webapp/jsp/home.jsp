@@ -23,7 +23,7 @@
     <main class="main-content">
         <div class="topnav" id="myTopnav">
             <a href="home.jsp" class="active">Home</a>
-            <a href="news.jsp">News</a>
+           <a href="<%= request.getContextPath() %>/NotizieServlet">Notizie</a>
             <a href="">Contatti</a>
             <a href="<%= request.getContextPath() %>/VideogiochiServlet">Videogiochi</a>
         </div>
@@ -94,14 +94,14 @@
         <% if (utente == null) { %>
             <!-- Mostro login e registrazione solo se non loggato -->
             <div class="loginbar" id="myLoginbar">
-                <button class="lang-btn">🌐</button>
+                <button class="lang-btn">🛒</button>
                 <button onclick="location.href='login.jsp'" class="btn">Login</button>
                 <button onclick="location.href='registrazione.jsp'" class="btn">Registrazione</button>
             </div>
         <% } else { %>
             <!-- Se vuoi, qui puoi mettere contenuti o link per utenti loggati -->
             <p>Area riservata.</p>
-         <button class="lang-btn">🌐</button>
+         <button class="lang-btn">🛒</button>
                <button onclick="location.href='<%= request.getContextPath() %>/LogoutServlet'" class="btn">Logout</button>
         <% } %>
     </aside>
