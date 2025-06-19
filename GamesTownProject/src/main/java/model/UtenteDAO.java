@@ -47,4 +47,14 @@ public class UtenteDAO {
             return result > 0;
         }
     }
+    
+    public boolean esisteEmail(String email) throws SQLException {
+        String sql = "SELECT 1 FROM utente WHERE email = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next();
+            }
+        }
+    }
 }

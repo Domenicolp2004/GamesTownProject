@@ -34,8 +34,8 @@ public class RegistrazioneServlet extends HttpServlet {
             UtenteDAO dao = new UtenteDAO(conn);
 
     
-            Utente utenteEsistente = dao.loginUtente(email, password);
-            if (utenteEsistente != null) {
+            boolean esiste = dao.esisteEmail(email);
+            if (esiste) {
                 request.setAttribute("errore", "Email già registrata");
                 request.getRequestDispatcher("jsp/registrazione.jsp").forward(request, response);
                 return;

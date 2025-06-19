@@ -23,6 +23,7 @@ public class AggiornaQuantitaServlet extends HttpServlet {
                 int quantita = Integer.parseInt(request.getParameter("quantita"));
 
                 if (quantita < 1) quantita = 1;
+                
 
            
                 carrello.aggiornaQuantita(id, quantita);
