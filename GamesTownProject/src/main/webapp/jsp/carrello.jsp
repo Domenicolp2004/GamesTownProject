@@ -29,7 +29,13 @@
         <tr>
             <td><%= videogioco.getTitolo() %></td>
             <td><%= videogioco.getPrezzo() %>€</td>
-            <td><%= item.getQuantita() %></td>
+           	<td>
+    <form action="<%= request.getContextPath() %>/AggiornaQuantitaServlet" method="post">
+        <input type="hidden" name="id" value="<%= videogioco.getId() %>" />
+        <input type="number" name="quantita" value="<%= item.getQuantita() %>" min="1" max="99" required />
+        <button type="submit">Aggiorna</button>
+    </form>
+</td>
             <td><%= item.getTotale() %>€</td>
             <td>
           <form action="<%= request.getContextPath() %>/RemoveCarrelloServlet" method="post">

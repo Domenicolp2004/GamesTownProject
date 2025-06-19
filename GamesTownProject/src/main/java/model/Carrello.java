@@ -22,6 +22,12 @@ public class Carrello {
     public void rimuovi(int id) {
         items.remove(id);
     }
+    public void aggiornaQuantita(int idVideogioco, int nuovaQuantita) {
+        ItemCarrello item = items.get(idVideogioco);
+        if (item != null) {
+            item.setQuantita(nuovaQuantita);
+        }
+    }
 
     public void svuota() {
         items.clear();

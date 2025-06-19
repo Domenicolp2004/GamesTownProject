@@ -24,6 +24,7 @@ public class ItemCarrello {
     public void setQuantita(int quantita) {
         this.quantita = quantita;
     }
+  
 
     public double getTotale() {
         return videogioco.getPrezzo() * quantita;
