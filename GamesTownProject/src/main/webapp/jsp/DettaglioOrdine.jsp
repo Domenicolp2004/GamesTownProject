@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dettaglio Ordine</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/main.css">
 </head>

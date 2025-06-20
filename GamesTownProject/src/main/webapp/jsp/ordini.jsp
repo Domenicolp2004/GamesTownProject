@@ -16,6 +16,7 @@
 <html>
 <head>
     <title>I miei ordini</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/main.css">
 </head>
 <body>

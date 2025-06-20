@@ -56,27 +56,26 @@ public Videogioco getVideogiocoById(int id) throws SQLException {
     return null;
 }
 
-public List<Videogioco> getVideogiochiInHome() throws SQLException {
-    List<Videogioco> lista = new ArrayList<>();
-    String sql = "SELECT * FROM videogioco ORDER BY dataUscita DESC LIMIT 5";
 
-    try (PreparedStatement stmt = conn.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery()) {
-           while (rs.next()) {
-               Videogioco v = new Videogioco();
-               v.setId(rs.getInt("id"));
-               v.setTitolo(rs.getString("titolo"));
-               v.setDescrizione(rs.getString("descrizione"));
-               v.setPrezzo(rs.getDouble("prezzo"));
-               v.setDataUscita(rs.getString("dataUscita"));
-               v.setGenere(rs.getString("genere"));
-               v.setPiattaforma(rs.getString("piattaforma"));
-               v.setImmagine(rs.getString("immagine"));
-               lista.add(v);
-           }
-       }
-       return lista;
-   }
+public List<Videogioco> getPrimiCinqueGiochi() throws SQLException {
+    String sql = "SELECT * FROM videogioco LIMIT 5";
+    List<Videogioco> lista = new ArrayList<>();
+
+    try ( PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        while (rs.next()) {
+            Videogioco v = new Videogioco();
+            v.setId(rs.getInt("id"));
+            v.setTitolo(rs.getString("titolo"));
+            v.setPrezzo(rs.getDouble("prezzo"));
+            v.setImmagine(rs.getString("immagine")); 
+            lista.add(v);
+        }
+    }
+    return lista;
+}
+
 
 //funzioni per l'amministratore:
 

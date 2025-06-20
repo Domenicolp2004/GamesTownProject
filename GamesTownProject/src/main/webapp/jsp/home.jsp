@@ -1,15 +1,19 @@
+
+<%@ page import="java.util.List" %>
+<%@ page import="model.Videogioco" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page session="true" %>
 <%
     model.Utente utente = (model.Utente) session.getAttribute("utente");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesTown</title>
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+ 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,41 +53,41 @@
 
         <div class="titolo">Prodotti in Vendita</div>
 
-        <div class="catalogo">
-            <div class="prodotto">
-                <img src="../images/fc.jpg" alt="fifa">
-                <div class="nome">FC 25 Standard Edition</div>
-                <div class="prezzo">€59,99</div>
-            </div>
-
-            <div class="prodotto">
-                <img src="../images/cod.jpg" alt="cod">
-                <div class="nome">Call of duty Black Ops 6</div>
-                <div class="prezzo">€69,90</div>
-            </div>
-
-            <div class="prodotto">
-                <img src="../images/minecraft.jpg" alt="Minecraft">
-                <div class="nome">Minecraft</div>
-                <div class="prezzo">€15,50</div>
-            </div>
-
-            <div class="prodotto">
-                <img src="../images/nba.jpg" alt="Nba 2K25 Standard Edition">
-                <div class="nome">Nba 2K25 Standard Edition</div>
-                <div class="prezzo">€69,90</div>
-            </div>
-
-            <div class="prodotto">
-                <img src="../images/f1-25.jpg" alt="F1 25 Iconic Edition">
-                <div class="nome">F1 25 Iconic Edition</div>
-                <div class="prezzo">€89,90</div>
-            </div>
+      <div class="catalogo">
+    <% 
+        List<model.Videogioco> giochi = (List<model.Videogioco>) request.getAttribute("giochi");
+        if (giochi != null) {
+            for (model.Videogioco gioco : giochi) {
+    %>
+        <div class="prodotto">
+            <h2><%= gioco.getTitolo() %></h2>
+                    <img src="<%= request.getContextPath() + "/images/" + gioco.getImmagine() %>" alt="<%= gioco.getTitolo() %>" width="200" />
+                
+                    <p>Prezzo: <%= gioco.getPrezzo() %> euro</p>
+                    <form action="<%= request.getContextPath() %>/AddCarrelloServlet" method="post">
+   				 <input type="hidden" name="id" value="<%= gioco.getId() %>"/>
+   				 <button type="submit">Aggiungi al carrello</button>
+</form>
+                    
         </div>
-
-        <div class="immag">
-            <img src="../images/sito.jpg" alt="sito" width="1200px" height="auto">
-        </div>
+    <% 
+            }
+        }
+    %>
+    
+    <%
+    if (giochi == null) {
+        out.println("Attributo giochi nullo");
+    } else if (giochi.isEmpty()) {
+        out.println("Lista giochi vuota");
+    }
+%>
+</div>
+		<!--
+		<div class="immag">
+		    <img src="../images/sito.jpg" alt="sito">
+		</div>
+		-->
 
         <section class="prodotti">
             <h2> Più venduti </h2>
@@ -101,7 +105,7 @@
         <% } else { %>
             <!-- Se vuoi, qui puoi mettere contenuti o link per utenti loggati -->
             <p>Area riservata.</p>
-         <button class="lang-btn">🛒</button>
+         <button onclick="location.href='carrello.jsp'" class="lang-btn">🛒</button>
                <button onclick="location.href='<%= request.getContextPath() %>/LogoutServlet'" class="btn">Logout</button>
         <% } %>
     </aside>

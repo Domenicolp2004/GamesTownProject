@@ -15,20 +15,18 @@ import java.util.List;
 
 @WebServlet("/HomeServlet")
 public class HomeServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try (Connection conn = DataBaseConnection.getConnection()) {
             VideogiocoDAO dao = new VideogiocoDAO(conn);
-            List<Videogioco> top5 = dao.getVideogiochiInHome();
+            List<Videogioco> top5 = dao.getPrimiCinqueGiochi();
+        
 
-            request.setAttribute("top5Videogiochi", top5);
-            request.getRequestDispatcher("jsp/home.jsp").forward(request, response);
-
+            request.setAttribute("giochi", top5);
+            request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore nel recupero dei videogiochi per la home");
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error");
         }
     }
 }
+

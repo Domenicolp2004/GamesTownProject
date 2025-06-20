@@ -1,24 +1,26 @@
 body {
     font-family: 'Titillium Web', sans-serif;
-    background-color: #0e0e0e; /* Nero grafite */
+    background-color: #0e0e0e;
     color: white;
     margin: 0;
     padding: 0;
-    
 }
 
 form {
-	
     max-width: 400px;
     margin: 100px auto;
     padding: 100px 125px;
     background-color: #1a1a1a;
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-    
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="nome"], input[type="cognome"] {
+/* Campi input */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="nome"],
+input[type="cognome"] {
     width: 100%;
     padding: 16px 20px;
     margin: 12px 0;
@@ -49,8 +51,7 @@ button {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.2s;
-} 
-
+}
 
 button:hover {
     background-color: #37a109;
@@ -67,8 +68,8 @@ button:hover {
     color: #1e90ff;
     text-align: right;
     text-decoration: none;
-
 }
+
 .forgot-password:hover {
     text-decoration: underline;
 }
@@ -79,3 +80,33 @@ h2 {
     font-size: 28px;
 }
 
+/* ✅ MEDIA QUERY per rendere il form responsive */
+@media screen and (max-width: 768px) {
+    form {
+        margin: 50px 20px;
+        padding: 40px 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .forgot-password {
+        text-align: center;
+        font-size: 13px;
+    }
+}
