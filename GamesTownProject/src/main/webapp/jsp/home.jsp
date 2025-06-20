@@ -51,7 +51,7 @@
             <p>Benvenuto, ospite! Loggati o registrati per un'esperienza completa.</p>
         <% } %>
 
-        <div class="titolo">Prodotti in Vendita</div>
+        <div class="titolo">Prodotti in Evidenza</div>
 
       <div class="catalogo">
     <% 
@@ -75,13 +75,7 @@
         }
     %>
     
-    <%
-    if (giochi == null) {
-        out.println("Attributo giochi nullo");
-    } else if (giochi.isEmpty()) {
-        out.println("Lista giochi vuota");
-    }
-%>
+
 </div>
 		<!--
 		<div class="immag">
@@ -89,9 +83,32 @@
 		</div>
 		-->
 
-        <section class="prodotti">
-            <h2> Più venduti </h2>
-        </section>
+      <div class="titolo">Più Economici</div>
+
+      <div class="catalogo">
+    <% 
+        List<model.Videogioco> games = (List<model.Videogioco>) request.getAttribute("eco");
+        if (games != null) {
+            for (model.Videogioco g : games) {
+    %>
+        <div class="prodotto">
+            <h2><%= g.getTitolo() %></h2>
+                    <img src="<%= request.getContextPath() + "/images/" + g.getImmagine() %>" alt="<%= g.getTitolo() %>" width="200" />
+                
+                    <p>Prezzo: <%= g.getPrezzo() %> euro</p>
+                    <form action="<%= request.getContextPath() %>/AddCarrelloServlet" method="post">
+   				 <input type="hidden" name="id" value="<%= g.getId() %>"/>
+   				 <button type="submit">Aggiungi al carrello</button>
+</form>
+                    
+        </div>
+    <% 
+            }
+        }
+    %>
+    
+
+</div>
     </main>
 
     <aside class="news-section">

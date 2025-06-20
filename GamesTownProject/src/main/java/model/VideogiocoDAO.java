@@ -76,6 +76,25 @@ public List<Videogioco> getPrimiCinqueGiochi() throws SQLException {
     return lista;
 }
 
+public List<Videogioco> getEconomici() throws SQLException {
+	String sql = "SELECT * FROM videogioco ORDER BY prezzo ASC LIMIT 5";
+    List<Videogioco> lista = new ArrayList<>();
+
+    try ( PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        while (rs.next()) {
+            Videogioco v = new Videogioco();
+            v.setId(rs.getInt("id"));
+            v.setTitolo(rs.getString("titolo"));
+            v.setPrezzo(rs.getDouble("prezzo"));
+            v.setImmagine(rs.getString("immagine")); 
+            lista.add(v);
+        }
+    }
+    return lista;
+}
+
 
 //funzioni per l'amministratore:
 

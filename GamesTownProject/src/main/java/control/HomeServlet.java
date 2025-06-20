@@ -19,8 +19,10 @@ public class HomeServlet extends HttpServlet {
         try (Connection conn = DataBaseConnection.getConnection()) {
             VideogiocoDAO dao = new VideogiocoDAO(conn);
             List<Videogioco> top5 = dao.getPrimiCinqueGiochi();
-        
+            List<Videogioco> cheap5 = dao.getEconomici();
+            
 
+            request.setAttribute("eco", cheap5);
             request.setAttribute("giochi", top5);
             request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
         } catch (SQLException e) {
