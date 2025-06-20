@@ -52,9 +52,28 @@
             <td><%= carrello.getTotale() %>€</td>
             <td><form action="<%= request.getContextPath() %>/SvuotaCarrelloServlet" method="post">
     <button type="submit">Svuota carrello</button>
+   
 </form></td>
         </tr>
     </table>
+    
+    <form action="<%= request.getContextPath() %>/ConfermaOrdineServlet" method="post" class="form-ordine">
+    <h3>Conferma Ordine</h3>
+    <label for="indirizzoSpedizione">Indirizzo di spedizione:</label><br>
+    <textarea name="indirizzoSpedizione" id="indirizzoSpedizione" rows="3" required></textarea><br><br>
+
+    <label for="metodoPagamento">Metodo di pagamento:</label><br>
+    <select name="metodoPagamento" id="metodoPagamento" required>
+        <option value="">Seleziona...</option>
+        <option value="Carta di credito">Carta di credito</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Pagamento alla consegna">Pagamento alla consegna</option>
+    </select><br><br>
+ <form action="<%= request.getContextPath() %>/ConfermaOrdineServlet" method="post">
+    <button type="submit">Conferma Ordine</button>
+</form>
+ 
+</form>
 
 <%
     }
