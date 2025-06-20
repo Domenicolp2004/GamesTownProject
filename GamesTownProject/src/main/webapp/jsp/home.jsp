@@ -115,14 +115,14 @@
         <% if (utente == null) { %>
             <!-- Mostro login e registrazione solo se non loggato -->
             <div class="loginbar" id="myLoginbar">
-                <button class="lang-btn">🛒</button>
-                <button onclick="location.href='login.jsp'" class="btn">Login</button>
-                <button onclick="location.href='registrazione.jsp'" class="btn">Registrazione</button>
+                 <button onclick="location.href='<%= request.getContextPath() %>/jsp/carrello.jsp'" class="lang-btn">🛒</button>
+           <button onclick="location.href='<%= request.getContextPath() %>/jsp/login.jsp'" class="btn">Login</button>
+		<button onclick="location.href='<%= request.getContextPath() %>/jsp/registrazione.jsp'" class="btn">Registrazione</button>
             </div>
         <% } else { %>
             <!-- Se vuoi, qui puoi mettere contenuti o link per utenti loggati -->
             <p>Area riservata.</p>
-         <button onclick="location.href='carrello.jsp'" class="lang-btn">🛒</button>
+         <button onclick="location.href='<%= request.getContextPath() %>/jsp/carrello.jsp'" class="lang-btn">🛒</button>
                <button onclick="location.href='<%= request.getContextPath() %>/LogoutServlet'" class="btn">Logout</button>
         <% } %>
     </aside>
