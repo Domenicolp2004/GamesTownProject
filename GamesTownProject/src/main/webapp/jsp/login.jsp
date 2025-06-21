@@ -2,39 +2,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>GamesTown</title>
- 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 	<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<form action="/GamesTownProject/LoginServlet" method="post">
+<form id="loginForm" action="<%= request.getContextPath() %>/LoginServlet" method="post">
+    <div class="container">
+        <h1 align="center">Accedi</h1>
+<label for="email"><b>Email</b></label>
+<input type="email" placeholder="Email" name="email" id="email" required>
+<span id="emailError" class="error-message"></span>
 
-  <div class="container">
-    <h1 align="center">Accedi</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="email" placeholder="Email" name="email" required>
-
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="password" required>
-    
-    <a href="password-dimenticata.jsp" class="forgot-password">Hai dimenticato la password?</a>
+<label for="password"><b>Password</b></label>
+<input type="password" placeholder="Password" name="password" id="password" required>
+<span id="passwordError" class="error-message"></span>
         
-    <button type="submit">Accedi</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+        <a href="password-dimenticata.jsp" class="forgot-password">Hai dimenticato la password?</a>
+        
+        <button type="submit">Accedi</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
 
-    <% String errore = (String) request.getAttribute("errore");
-       if (errore != null) { %>
-       <p style="color:red; text-align:center;"><%= errore %></p>
-    <% } %>
-  </div>
-
+        <% String errore = (String) request.getAttribute("errore");
+           if (errore != null) { %>
+           <p style="color:red; text-align:center;"><%= errore %></p>
+        <% } %>
+    </div>
 </form>
 
+<script src="<%= request.getContextPath() %>/scripts/login.js"></script>
 </body>
 </html>

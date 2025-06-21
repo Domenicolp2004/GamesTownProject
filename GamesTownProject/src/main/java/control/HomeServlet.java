@@ -24,6 +24,7 @@ public class HomeServlet extends HttpServlet {
 
             request.setAttribute("eco", cheap5);
             request.setAttribute("giochi", top5);
+            
             request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();

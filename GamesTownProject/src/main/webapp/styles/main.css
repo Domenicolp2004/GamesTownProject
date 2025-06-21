@@ -180,6 +180,8 @@ button:hover, .dropbtn:hover {
     font-weight: bold;
 }
 
+
+
 /* ------------------- IMMAGINE GRANDE ------------------- */
 
 .immag {
@@ -254,5 +256,6 @@ button:hover, .dropbtn:hover {
     .dropdown {
         width: 100%;
     }
+   
 }
 

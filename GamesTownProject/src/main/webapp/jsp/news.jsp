@@ -4,14 +4,14 @@
 <html>
 <head>
     <title>News - GamesTown</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/main.css">
 </head>
 <body>
 
 <h1 align="center">Ultime Notizie</h1>
 
-<div class="catalogo">
+<div class="catalogo" id="newsCatalogo">
     <%
         List<Notizia> listaNotizie = (List<Notizia>) request.getAttribute("listaNotizie");
         if (listaNotizie != null && !listaNotizie.isEmpty()) {
@@ -32,6 +32,8 @@
         }
     %>
 </div>
+
+<script src="<%= request.getContextPath() %>/scripts/news.js"></script>
 
 </body>
 </html>

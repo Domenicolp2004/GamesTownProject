@@ -3,27 +3,34 @@
 <html>
 <head>
     <title>Registrazione - GamesTown</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+      .error-message { color: red; font-size: 0.9em; }
+    </style>
 </head>
 <body>
 
-<form action="<%= request.getContextPath() %>/RegistrazioneServlet" method="post">
+<form id="registrationForm" action="<%= request.getContextPath() %>/RegistrazioneServlet" method="post">
   <div class="container">
     <h1 align="center">Registrati</h1>
 
     <label for="nome"><b>Nome</b></label>
-    <input type="text" placeholder="Nome" name="nome" required>
+    <input type="text" placeholder="Nome" name="nome" id="nome" required>
+    <span id="nomeError" class="error-message"></span>
 
     <label for="cognome"><b>Cognome</b></label>
-    <input type="text" placeholder="Cognome" name="cognome" required>
+    <input type="text" placeholder="Cognome" name="cognome" id="cognome" required>
+    <span id="cognomeError" class="error-message"></span>
 
     <label for="email"><b>Email</b></label>
-    <input type="email" placeholder="Email" name="email" required>
+    <input type="email" placeholder="Email" name="email" id="email" required>
+    <span id="emailError" class="error-message"></span>
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="password" required>
+    <input type="password" placeholder="Password" name="password" id="password" required>
+    <span id="passwordError" class="error-message"></span>
 
     <button type="submit">Registrati</button>
 
@@ -39,5 +46,6 @@
   </div>
 </form>
 
+<script src="<%= request.getContextPath() %>/scripts/registrazione.js"></script>
 </body>
 </html>

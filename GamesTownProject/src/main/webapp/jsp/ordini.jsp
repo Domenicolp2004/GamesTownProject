@@ -4,24 +4,25 @@
 <%
     String confermaSuccesso = (String) session.getAttribute("confermaSuccesso");
     if (confermaSuccesso != null) {
-%>
-    <p style="color: green;"><%= confermaSuccesso %></p>
-<%
+        request.setAttribute("confermaSuccesso", confermaSuccesso);
         session.removeAttribute("confermaSuccesso");
     }
 %>
-
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>I miei ordini</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/main.css">
 </head>
 <body>
 
 <h1>I miei ordini</h1>
+
+<p id="ordineSuccesso" style="color: green; display: none;">
+    <%= request.getAttribute("confermaSuccesso") != null ? request.getAttribute("confermaSuccesso") : "" %>
+</p>
 
 <%
     List<Ordine> listaOrdini = (List<Ordine>) request.getAttribute("listaOrdini");
@@ -62,5 +63,6 @@
     }
 %>
 
+<script src="<%= request.getContextPath() %>/scripts/ordini.js"></script>
 </body>
 </html>
