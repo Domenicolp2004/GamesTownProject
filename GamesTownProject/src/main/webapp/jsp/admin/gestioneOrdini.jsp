@@ -1,12 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page import="model.Utente" %>
+<%@ page import="model.Ordine" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page session="true" %>
+
+
+<%! 
+    SimpleDateFormat displayDateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+    SimpleDateFormat inputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+%>
+
+<%
+    Utente utente = (Utente) session.getAttribute("utente");
+    if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo())) {
+        response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
+        return;
+    }
+
+    List<Ordine> ordini = (List<Ordine>) request.getAttribute("listaOrdini");
+
+    // Valori per mantenere i filtri compilati nel form
+    String clienteFiltro = request.getParameter("clienteFiltro") != null ? request.getParameter("clienteFiltro") : "";
+    String dataInizio = request.getParameter("dataInizio") != null ? request.getParameter("dataInizio") : "";
+    String dataFine = request.getParameter("dataFine") != null ? request.getParameter("dataFine") : "";
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <title>Visualizza Ordini - Admin</title>
+    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
 </head>
 <body>
+    <h1>Visualizza Ordini</h1>
+    <a href="adminHome.jsp">Torna alla Home Admin</a>
 
+    <form method="get" action="AdminOrdiniServlet">
+        Cliente (email): <input type="text" name="clienteFiltro" value="<%= clienteFiltro %>" />
+        Data Inizio: <input type="date" name="dataInizio" value="<%= dataInizio %>" />
+        Data Fine: <input type="date" name="dataFine" value="<%= dataFine %>" />
+        <button type="submit">Filtra</button>
+    </form>
+
+    <hr />
+
+    <%
+        if (ordini != null && !ordini.isEmpty()) {
+            for (Ordine o : ordini) {
+    %>
+        <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+            <p><strong>Ordine ID:</strong> <%= o.getId() %></p>
+            <p><strong>Cliente:</strong> <%= o.getIdUtente() %></p>
+            <p><strong>Data Ordine:</strong> 
+                <%= o.getDataOrdine() != null ? displayDateFormat.format(o.getDataOrdine()) : "" %>
+            </p>
+            <p><strong>Stato:</strong> <%= o.getStato() %></p>
+            <p><strong>Totale:</strong> Euro <%= o.getTotale() %></p>
+            <p><strong>Indirizzo Spedizione:</strong> <%= o.getIndirizzoSpedizione() %></p>
+            <p><strong>Metodo Pagamento:</strong> <%= o.getMetodoPagamento() %></p>
+        </div>
+    <%
+            }
+        } else {
+    %>
+        <p>Nessun ordine trovato per i criteri selezionati.</p>
+    <%
+        }
+    %>
 </body>
 </html>

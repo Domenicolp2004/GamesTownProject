@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 import model.RigaOrdine;
 
@@ -83,6 +84,56 @@ public class OrdineDAO {
         }
 
         return ordini;
+    }
+    
+    public List<Ordine> getOrdiniFiltrati(String clienteFiltro, String dataInizio, String dataFine) throws SQLException {
+        List<Ordine> lista = new ArrayList<>();
+
+        StringBuilder sql = new StringBuilder("SELECT * FROM ordini WHERE 1=1 ");
+        List<Object> params = new ArrayList<>();
+
+        if (clienteFiltro != null && !clienteFiltro.trim().isEmpty()) {
+            sql.append("AND id_utente IN (SELECT id FROM utenti WHERE email LIKE ?) ");
+            params.add("%" + clienteFiltro.trim() + "%");
+        }
+
+        if (dataInizio != null && !dataInizio.trim().isEmpty()) {
+            sql.append("AND data_ordine >= ? ");
+            params.add(Date.valueOf(dataInizio));
+        }
+
+        if (dataFine != null && !dataFine.trim().isEmpty()) {
+            sql.append("AND data_ordine <= ? ");
+            params.add(Date.valueOf(dataFine));
+        }
+
+        sql.append("ORDER BY data_ordine DESC");
+
+        try (PreparedStatement ps = conn.prepareStatement(sql.toString())) {
+
+            for (int i = 0; i < params.size(); i++) {
+                ps.setObject(i + 1, params.get(i));
+            }
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Ordine ordine = new Ordine();
+
+                    ordine.setId(rs.getInt("id"));
+                    ordine.setIdUtente(rs.getInt("id_utente"));
+                    ordine.setDataOrdine(rs.getDate("data_ordine"));
+                    ordine.setStato(rs.getString("stato"));
+                    ordine.setTotale(rs.getDouble("totale"));
+                    ordine.setIndirizzoSpedizione(rs.getString("indirizzo_spedizione"));
+                    ordine.setMetodoPagamento(rs.getString("metodo_pagamento"));
+                    // aggiungi altri campi se servono
+
+                    lista.add(ordine);
+                }
+            }
+        }
+
+        return lista;
     }
 
    

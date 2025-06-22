@@ -12,17 +12,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Gestione Catalogo - Admin</title>
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
-    <script src="<%= request.getContextPath() %>/scripts/adminCatalogo.js"></script>
 </head>
 <body>
     <h1>Gestione Catalogo Prodotti</h1>
+    <script src="<%= request.getContextPath() %>/scripts/adminCatalogo.js"></script>
 
     <h2>Inserisci Nuovo Videogioco</h2>
     <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post">
-        <input type="hidden" name="azione" value="inserisci" />
+        <input type="hidden" name="action" value="insert" />
         Titolo: <input type="text" name="titolo" required /><br/>
         Descrizione: <textarea name="descrizione"></textarea><br/>
         Prezzo: <input type="number" step="0.01" name="prezzo" required /><br/>
@@ -48,8 +47,8 @@
             Genere: <input type="text" name="genere" value="<%= gioco.getGenere() %>" /><br/>
             Piattaforma: <input type="text" name="piattaforma" value="<%= gioco.getPiattaforma() %>" /><br/>
             Immagine (nome file): <input type="text" name="immagine" value="<%= gioco.getImmagine() %>" /><br/>
-            <button type="submit" name="azione" value="modifica">Modifica</button>
-            <button type="submit" name="azione" value="cancella" onclick="return confirm('Sei sicuro di voler cancellare questo prodotto?');">Cancella</button>
+            <button type="submit" name="action" value="update">Modifica</button>
+            <button type="submit" name="action" value="delete" onclick="return confirm('Sei sicuro di voler cancellare questo prodotto?');">Cancella</button>
         </form>
     <%
             }

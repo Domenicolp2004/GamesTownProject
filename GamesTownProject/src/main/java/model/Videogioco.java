@@ -9,7 +9,9 @@ public class Videogioco {
     private String genere;
     private String piattaforma;
     private String immagine; // path immagine
+    private boolean attivo;
 
+   
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -34,4 +36,12 @@ public class Videogioco {
 
     public String getImmagine() { return immagine; }
     public void setImmagine(String immagine) { this.immagine = immagine; }
+    
+    public boolean isAttivo() {
+        return attivo;
+    }
+
+    public void setAttivo(boolean attivo) {
+        this.attivo = attivo;
+    }
 }
