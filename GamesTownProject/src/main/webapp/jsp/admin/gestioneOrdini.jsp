@@ -16,6 +16,8 @@
         response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
         return;
     }
+    
+    String token = (String) session.getAttribute("token");
 
     List<Ordine> ordini = (List<Ordine>) request.getAttribute("listaOrdini");
 
@@ -33,14 +35,16 @@
 </head>
 <body>
     <h1>Visualizza Ordini</h1>
+    <p>Token in sessione: <%= token %></p>
     <a href="adminHome.jsp">Torna alla Home Admin</a>
 
-    <form method="get" action="AdminOrdiniServlet">
-        Cliente (email): <input type="text" name="clienteFiltro" value="<%= clienteFiltro %>" />
-        Data Inizio: <input type="date" name="dataInizio" value="<%= dataInizio %>" />
-        Data Fine: <input type="date" name="dataFine" value="<%= dataFine %>" />
-        <button type="submit">Filtra</button>
-    </form>
+<form method="post" action="/AdminOrdiniServlet">
+    <input type="hidden" name="token" value="<%= session.getAttribute("token") %>" />
+    Cliente (email): <input type="text" name="clienteFiltro" value="<%= clienteFiltro %>" />
+    Data Inizio: <input type="date" name="dataInizio" value="<%= dataInizio %>" />
+    Data Fine: <input type="date" name="dataFine" value="<%= dataFine %>" />
+    <button type="submit">Filtra</button>
+</form>
 
     <hr />
 

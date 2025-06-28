@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
                 // Genera un token unico per la sessione
                 String token = UUID.randomUUID().toString();
                 session.setAttribute("token", token); 
-                
-                // Controllo ruolo
+
+                // Redirect senza passare il token in URL
                 if ("admin".equalsIgnoreCase(utente.getRuolo())) {
                     response.sendRedirect(request.getContextPath() + "/jsp/admin/adminHome.jsp");
                 } else {

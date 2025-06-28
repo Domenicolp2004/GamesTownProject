@@ -4,7 +4,9 @@
 <%@ page session="true" %>
 <%
     Utente utente = (Utente) session.getAttribute("utente");
-    if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo())) {
+    String token = (String) session.getAttribute("token");
+
+    if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo()) || token == null) {
         response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
         return;
     }
@@ -22,7 +24,8 @@
 
     <h2>Inserisci Nuovo Videogioco</h2>
     <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post">
-        <input type="hidden" name="action" value="inserisci" />
+        <input type="hidden" name="action" value="insert" />
+        <input type="hidden" name="token" value="<%= token %>" />
         Titolo: <input type="text" name="titolo" required /><br/>
         Descrizione: <textarea name="descrizione"></textarea><br/>
         Prezzo: <input type="number" step="0.01" name="prezzo" required /><br/>
@@ -41,6 +44,7 @@
     %>
         <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post" style="border:1px solid #ccc; margin-bottom:10px; padding:10px;">
             <input type="hidden" name="id" value="<%= gioco.getId() %>" />
+            <input type="hidden" name="token" value="<%= token %>" />
             Titolo: <input type="text" name="titolo" value="<%= gioco.getTitolo() %>" required /><br/>
             Descrizione: <textarea name="descrizione"><%= gioco.getDescrizione() %></textarea><br/>
             Prezzo: <input type="number" step="0.01" name="prezzo" value="<%= gioco.getPrezzo() %>" required /><br/>
@@ -48,8 +52,8 @@
             Genere: <input type="text" name="genere" value="<%= gioco.getGenere() %>" /><br/>
             Piattaforma: <input type="text" name="piattaforma" value="<%= gioco.getPiattaforma() %>" /><br/>
             Immagine (nome file): <input type="text" name="immagine" value="<%= gioco.getImmagine() %>" /><br/>
-            <button type="submit" name="azione" value="modifica">Modifica</button>
-            <button type="submit" name="azione" value="cancella" onclick="return confirm('Sei sicuro di voler cancellare questo prodotto?');">Cancella</button>
+                 <button type="submit" name="action" value="update">Modifica</button>
+            <button type="submit" name="action" value="delete" onclick="return confirm('Sei sicuro di voler cancellare questo prodotto?');">Cancella</button>
         </form>
     <%
             }

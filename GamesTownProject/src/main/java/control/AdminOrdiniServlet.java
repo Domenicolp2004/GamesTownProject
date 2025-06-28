@@ -21,12 +21,22 @@ public class AdminOrdiniServlet extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
-       Utente utente = (session != null) ? (Utente) session.getAttribute("utente") : null;
-       String token = (session != null) ? (String) session.getAttribute("token") : null;
-       String requestToken = request.getParameter("token");
+        if (session == null) {
+            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
+            return;
+        }
 
-       if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo()) || token == null || !token.equals(requestToken)) {
-            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
+        Utente utente = (Utente) session.getAttribute("utente");
+        if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo())) {
+            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
+            return;
+        }
+
+        // Controllo CSRF token (solo se vuoi nel GET, altrimenti puoi anche evitarlo qui)
+        String sessionToken = (String) session.getAttribute("token");
+        String requestToken = request.getParameter("token");
+        if (sessionToken == null || !sessionToken.equals(requestToken)) {
+            response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
             return;
         }
 
@@ -45,5 +55,4 @@ public class AdminOrdiniServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore del server");
         }
     }
-
 }

@@ -61,6 +61,29 @@ public class VideogiocoDAO {
         }
         return null;
     }
+    
+    public Videogioco getVideogiocoByIdPerUpdate(int id) throws SQLException {
+        String sql = "SELECT * FROM videogioco WHERE id = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Videogioco v = new Videogioco();
+                    v.setId(rs.getInt("id"));
+                    v.setTitolo(rs.getString("titolo"));
+                    v.setDescrizione(rs.getString("descrizione"));
+                    v.setPrezzo(rs.getDouble("prezzo"));
+                    v.setDataUscita(rs.getString("dataUscita"));
+                    v.setGenere(rs.getString("genere"));
+                    v.setPiattaforma(rs.getString("piattaforma"));
+                    v.setImmagine(rs.getString("immagine"));
+                    v.setAttivo(rs.getBoolean("attivo"));
+                    return v;
+                }
+            }
+        }
+        return null;
+    }
 
     public List<Videogioco> getPrimiCinqueGiochi() throws SQLException {
         String sql = "SELECT * FROM videogioco WHERE attivo = TRUE LIMIT 5";

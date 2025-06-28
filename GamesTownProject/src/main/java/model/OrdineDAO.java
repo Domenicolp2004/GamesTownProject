@@ -89,7 +89,7 @@ public class OrdineDAO {
     public List<Ordine> getOrdiniFiltrati(String clienteFiltro, String dataInizio, String dataFine) throws SQLException {
         List<Ordine> lista = new ArrayList<>();
 
-        StringBuilder sql = new StringBuilder("SELECT * FROM ordini WHERE 1=1 ");
+        StringBuilder sql = new StringBuilder("SELECT * FROM ordine WHERE 1=1 ");
         List<Object> params = new ArrayList<>();
 
         if (clienteFiltro != null && !clienteFiltro.trim().isEmpty()) {
