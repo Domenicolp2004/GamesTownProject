@@ -1,84 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("registrationForm");
-    const nomeInput = document.getElementById("nome");
-    const cognomeInput = document.getElementById("cognome");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
+  const form = document.getElementById("registrationForm");
+  const nomeInput = document.getElementById("nome");
+  const cognomeInput = document.getElementById("cognome");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
 
-    const nomeError = document.getElementById("nomeError");
-    const cognomeError = document.getElementById("cognomeError");
-    const emailError = document.getElementById("emailError");
-    const passwordError = document.getElementById("passwordError");
+  const nomeError = document.getElementById("nomeError");
+  const cognomeError = document.getElementById("cognomeError");
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf("/", 2));
 
-    // Validazione in tempo reale
-    nomeInput.addEventListener("input", () => {
-        if (nomeInput.value.trim() === "") {
-            nomeError.textContent = "Inserisci il nome.";
-        } else {
-            nomeError.textContent = "";
-        }
-    });
+  let emailRegistrata = false; 
 
-    cognomeInput.addEventListener("input", () => {
-        if (cognomeInput.value.trim() === "") {
-            cognomeError.textContent = "Inserisci il cognome.";
-        } else {
-            cognomeError.textContent = "";
-        }
-    });
+  // Validazione in tempo reale
+  nomeInput.addEventListener("input", () => {
+    nomeError.textContent = nomeInput.value.trim() === "" ? "Inserisci il nome." : "";
+  });
 
-    emailInput.addEventListener("input", () => {
-        if (!emailRegex.test(emailInput.value.trim())) {
-            emailError.textContent = "Inserisci un'email valida.";
-        } else {
-            emailError.textContent = "";
-        }
-    });
+  cognomeInput.addEventListener("input", () => {
+    cognomeError.textContent = cognomeInput.value.trim() === "" ? "Inserisci il cognome." : "";
+  });
 
-    passwordInput.addEventListener("input", () => {
-        if (passwordInput.value.length < 6) {
-            passwordError.textContent = "La password deve contenere almeno 6 caratteri.";
-        } else {
-            passwordError.textContent = "";
-        }
-    });
+  emailInput.addEventListener("input", () => {
+    const val = emailInput.value.trim();
 
-    // Validazione al submit
-    form.addEventListener("submit", (event) => {
-        let valid = true;
+    if (!val.includes("@")) {
+      emailError.textContent = "Inserisci un'email valida.";
+      return;
+    }
 
-        if (nomeInput.value.trim() === "") {
-            nomeError.textContent = "Inserisci il nome.";
-            valid = false;
-        } else {
-            nomeError.textContent = "";
-        }
+    if (!emailRegex.test(val)) {
+      emailError.textContent = "";
+      return;
+    }
 
-        if (cognomeInput.value.trim() === "") {
-            cognomeError.textContent = "Inserisci il cognome.";
-            valid = false;
-        } else {
-            cognomeError.textContent = "";
-        }
+    // Verifica AJAX
+    fetch(`${contextPath}/CheckEmailServlet?email=${encodeURIComponent(val)}`)
+      .then(response => response.json())
+      .then(data => {
+        emailRegistrata = data.exists;
+        emailError.textContent = data.exists ? "Email già registrata." : "";
+      })
+      .catch(() => {
+        emailError.textContent = "Errore nella verifica email.";
+      });
+  });
 
-        if (!emailRegex.test(emailInput.value.trim())) {
-            emailError.textContent = "Inserisci un'email valida.";
-            valid = false;
-        } else {
-            emailError.textContent = "";
-        }
+  passwordInput.addEventListener("input", () => {
+    passwordError.textContent = passwordInput.value.length < 6
+      ? "La password deve contenere almeno 6 caratteri."
+      : "";
+  });
 
-        if (passwordInput.value.length < 6) {
-            passwordError.textContent = "La password deve contenere almeno 6 caratteri.";
-            valid = false;
-        } else {
-            passwordError.textContent = "";
-        }
+  // Validazione al submit
+  form.addEventListener("submit", (event) => {
+    let valid = true;
 
-        if (!valid) {
-            event.preventDefault();
-        }
-    });
+    if (nomeInput.value.trim() === "") {
+      nomeError.textContent = "Inserisci il nome.";
+      valid = false;
+    }
+
+    if (cognomeInput.value.trim() === "") {
+      cognomeError.textContent = "Inserisci il cognome.";
+      valid = false;
+    }
+
+    if (!emailRegex.test(emailInput.value.trim())) {
+      emailError.textContent = "Inserisci un'email valida.";
+      valid = false;
+    } else if (emailRegistrata) {
+      emailError.textContent = "Email già registrata.";
+      valid = false;
+    }
+
+    if (passwordInput.value.length < 6) {
+      passwordError.textContent = "La password deve contenere almeno 6 caratteri.";
+      valid = false;
+    }
+
+    if (!valid) {
+      event.preventDefault();
+    }
+  });
 });
