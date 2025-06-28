@@ -38,7 +38,7 @@
     <p>Token in sessione: <%= token %></p>
     <a href="adminHome.jsp">Torna alla Home Admin</a>
 
-<form method="post" action="/AdminOrdiniServlet">
+<form method="get" action="<%= request.getContextPath() %>/AdminOrdiniServlet">
     <input type="hidden" name="token" value="<%= session.getAttribute("token") %>" />
     Cliente (email): <input type="text" name="clienteFiltro" value="<%= clienteFiltro %>" />
     Data Inizio: <input type="date" name="dataInizio" value="<%= dataInizio %>" />

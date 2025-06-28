@@ -2,6 +2,7 @@
 <%@ page import="model.Utente" %>
 <%@ page import="model.Ordine" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%
     Utente utente = (Utente) session.getAttribute("utente");
     if (utente == null || !"admin".equals(utente.getRuolo())) {
@@ -10,6 +11,14 @@
     }
 
     List<Ordine> ordini = (List<Ordine>) request.getAttribute("ordini");
+    String clienteFiltro = request.getParameter("clienteFiltro") != null ? request.getParameter("clienteFiltro") : "";
+    String dataInizio = request.getParameter("dataInizio") != null ? request.getParameter("dataInizio") : "";
+    String dataFine = request.getParameter("dataFine") != null ? request.getParameter("dataFine") : "";
+
+    // Token CSRF per sicurezza
+    String token = (String) session.getAttribute("token");
+
+    SimpleDateFormat displayDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 %>
 <html>
 <head>
@@ -20,9 +29,10 @@
 <body>
     <h2>Ordini Clienti</h2>
     <form id="filtroOrdiniForm" action="/AdminOrdiniServlet" method="get">
-        Da: <input type="date" name="da" id="da">
-        A: <input type="date" name="a" id="a">
-        Email cliente (opzionale): <input type="text" name="email" id="email">
+    	<input type="hidden" name="token" value="<%= token %>" />
+		Da: <input type="date" name="dataInizio" id="dataInizio" value="<%= dataInizio %>" />
+        A: <input type="date" name="dataFine" id="dataFine" value="<%= dataFine %>" />
+             Email cliente (opzionale): <input type="text" name="clienteFiltro" id="clienteFiltro" value="<%= clienteFiltro %>" />
         <button type="submit">Filtra</button>
     </form>
 
@@ -47,6 +57,11 @@
                 <td><a href="DettagliOrdine.jsp?id=<%= o.getId() %>">🔍</a></td>
             </tr>
         <%      }
+            } else{
+        %>  <tr>
+                <td colspan="4" style="text-align:center;">Nessun ordine trovato per i criteri selezionati.</td>
+            </tr>
+        <%
             }
         %>
         </tbody>
