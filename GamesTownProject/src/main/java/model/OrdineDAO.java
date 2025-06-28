@@ -93,7 +93,7 @@ public class OrdineDAO {
         List<Object> params = new ArrayList<>();
 
         if (clienteFiltro != null && !clienteFiltro.trim().isEmpty()) {
-            sql.append("AND id_utente IN (SELECT id FROM utenti WHERE email LIKE ?) ");
+            sql.append("AND id_utente IN (SELECT id FROM utente WHERE email LIKE ?) ");
             params.add("%" + clienteFiltro.trim() + "%");
         }
 
