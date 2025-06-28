@@ -22,7 +22,10 @@ public class AdminCatalogoServlet extends HttpServlet {
         
         HttpSession session = request.getSession(false);
         Utente utente = (session != null) ? (Utente) session.getAttribute("utente") : null;
-        if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo())) {
+        String token = (session != null) ? (String) session.getAttribute("token") : null;
+        String requestToken = request.getParameter("token"); // 
+
+        if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo()) || token == null || !token.equals(requestToken)) {
             response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
             return;
         }

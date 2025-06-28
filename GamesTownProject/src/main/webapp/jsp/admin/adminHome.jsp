@@ -2,11 +2,12 @@
 <%@ page import="model.Utente" %>
 <%
 	Utente utente = (Utente) session.getAttribute("utente");
-	if (utente == null || !"admin".equals(utente.getRuolo())) {
-	    // Reindirizza alla home o pagina di login con messaggio di accesso negato
+	String token = (String) session.getAttribute("token");
+	
+	if (utente == null || token == null || !"admin".equalsIgnoreCase(utente.getRuolo())) {
 	    response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
 	    return;
-}
+	}
 
 %>
 <!DOCTYPE html>

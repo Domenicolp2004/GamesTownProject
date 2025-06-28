@@ -10,6 +10,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -27,7 +28,11 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("utente", utente);
 
-                // ✅ Controllo ruolo
+                // Genera un token unico per la sessione
+                String token = UUID.randomUUID().toString();
+                session.setAttribute("token", token); 
+                
+                // Controllo ruolo
                 if ("admin".equalsIgnoreCase(utente.getRuolo())) {
                     response.sendRedirect(request.getContextPath() + "/jsp/admin/adminHome.jsp");
                 } else {

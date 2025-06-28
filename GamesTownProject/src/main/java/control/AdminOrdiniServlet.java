@@ -21,8 +21,11 @@ public class AdminOrdiniServlet extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
-        Utente utente = (session != null) ? (Utente) session.getAttribute("utente") : null;
-        if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo())) {
+       Utente utente = (session != null) ? (Utente) session.getAttribute("utente") : null;
+       String token = (session != null) ? (String) session.getAttribute("token") : null;
+       String requestToken = request.getParameter("token");
+
+       if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo()) || token == null || !token.equals(requestToken)) {
             response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
             return;
         }
@@ -43,5 +46,4 @@ public class AdminOrdiniServlet extends HttpServlet {
         }
     }
 
-    // Potresti aggiungere doPost se vuoi modificare stati ordini ecc.
 }

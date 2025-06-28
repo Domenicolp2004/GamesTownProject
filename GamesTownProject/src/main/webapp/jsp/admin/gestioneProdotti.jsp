@@ -22,7 +22,7 @@
 
     <h2>Inserisci Nuovo Videogioco</h2>
     <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post">
-        <input type="hidden" name="azione" value="inserisci" />
+        <input type="hidden" name="action" value="inserisci" />
         Titolo: <input type="text" name="titolo" required /><br/>
         Descrizione: <textarea name="descrizione"></textarea><br/>
         Prezzo: <input type="number" step="0.01" name="prezzo" required /><br/>
