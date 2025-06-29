@@ -14,7 +14,7 @@ public class RigaOrdineDAO {
     // Recupera tutte le righe di un ordine dato l'id ordine
     public List<RigaOrdine> getRighePerOrdine(int idOrdine) throws SQLException {
         List<RigaOrdine> righe = new ArrayList<>();
-        String sql = "SELECT * FROM rigaOrdine WHERE id_ordine = ?";
+        String sql = "SELECT * FROM rigaordine WHERE id_ordine = ?";
 
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, idOrdine);
@@ -36,7 +36,7 @@ public class RigaOrdineDAO {
 
     // Metodo per salvare una riga ordine (opzionale)
     public void salvaRigaOrdine(RigaOrdine riga) throws SQLException {
-        String sql = "INSERT INTO rigaOrdine (id_ordine, id_videogioco, quantita, prezzo_unitario) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO rigaordine (id_ordine, id_videogioco, quantita, prezzo_unitario) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, riga.getIdOrdine());
             stmt.setInt(2, riga.getIdProdotto());
