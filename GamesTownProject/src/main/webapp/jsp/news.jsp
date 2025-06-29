@@ -8,10 +8,12 @@
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/main.css">
 </head>
 <body>
-
+<%@ include file="header.jsp" %>
 <h1 align="center">Ultime Notizie</h1>
 
 <div class="catalogo" id="newsCatalogo">
+   	
+   
     <%
         List<Notizia> listaNotizie = (List<Notizia>) request.getAttribute("listaNotizie");
         if (listaNotizie != null && !listaNotizie.isEmpty()) {
@@ -31,8 +33,10 @@
     <%
         }
     %>
+	
 </div>
 
+	<%@ include file="footer.jsp" %>
 <script src="<%= request.getContextPath() %>/scripts/news.js"></script>
 
 </body>

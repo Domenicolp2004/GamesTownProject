@@ -3,15 +3,41 @@
 body {
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
-    background-color: #222222;
-    color: white;
+    background-color: #121212; /* sfondo scuro ma meno nero puro */
+    color: #e0e0e0; /* testo chiaro, comodo per lettura */
 }
 
 .container {
     display: grid;
     grid-template-columns: 200px 1fr 250px;
-    grid-template-rows: auto;
+    grid-template-rows: auto 1fr auto; 
     height: 100vh;
+}
+
+footer {
+    grid-column: 1 / -1;
+    grid-row: 3; 
+    background-color: #1f2f2b;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.user-section {
+    float: right;
+    margin-top: 10px;
+}
+
+.user-section p {
+    display: inline-block;
+    margin-right: 10px;
+    color: white; /* o colore adatto al tema */
+}
+
+.btn {
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 .logo {
@@ -22,7 +48,8 @@ body {
 
 .main-content {
     padding: 20px;
-    background-color: #222222;
+    padding-bottom: 80px;
+    background-color: #121212;
 }
 
 .search-bar {
@@ -30,58 +57,64 @@ body {
     border: none;
     padding: 15px 20px;
     border-radius: 30px;
-    color: white;
+    color: #e0e0e0;
     width: 250px;
     font-size: 14px;
     margin-top: 40px;
 }
 
 button, .dropbtn {
-    background: #2a2a2a;
+    background: #1f2f2b;
     border: none;
-    color: white;
+    color: #e0e0e0;
     padding: 14px 16px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     margin: 10px 5px 10px 0;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover, .dropbtn:hover {
-    background-color: #ffffff;
-    color: black;
+    background-color: #00bfa5; /* verde acqua */
+    color: #121212;
+    box-shadow: 0 6px 12px rgba(0,191,165,0.6);
 }
 
 /* ------------------- NAV ------------------- */
 
 .topnav {
-    background-color: #222222;
+    background-color: #121212;
     display: flex;
     flex-wrap: wrap;
 }
 
 .topnav a {
     display: block;
-    color: white;
+    color: #e0e0e0;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
 }
 
 .topnav a:hover {
-    background-color: #43bf0a;
-    color: black;
+    background-color: #00bfa5;
+    color: #121212;
+    box-shadow: 0 4px 12px rgba(0,191,165,0.5);
 }
 
 .topnav a.active {
-    background-color: #ffffff;
-    color: black;
+    background-color: #00bfa5;
+    color: #121212;
+    box-shadow: 0 4px 12px rgba(0,191,165,0.6);
 }
 
 /* ------------------- LOGIN ------------------- */
 
 .loginbar a {
-    color: white;
+    color: #e0e0e0;
     padding: 16px 18px;
     text-decoration: none;
     font-size: 17px;
@@ -105,22 +138,25 @@ button:hover, .dropbtn:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #1f2f2b;
     min-width: 160px;
     z-index: 1;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px rgba(0,191,165,0.2);
+    border-radius: 6px;
 }
 
 .dropdown-content a {
-    color: black;
+    color: #e0e0e0;
     padding: 14px 16px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
 }
 
 .dropdown-content a:hover {
-    background-color: #43bf04;
-    color: white;
+    background-color: #00bfa5;
+    color: #121212;
 }
 
 .dropdown:hover .dropdown-content {
@@ -128,8 +164,8 @@ button:hover, .dropbtn:hover {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #43bf04;
-    color: white;
+    background-color: #00bfa5;
+    color: #121212;
 }
 
 /* ------------------- PRODOTTI ------------------- */
@@ -142,17 +178,19 @@ button:hover, .dropbtn:hover {
 }
 
 .prodotto {
-    background-color: #222222;
+    background-color: #121212; /* stesso colore dello sfondo */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 200px;
     text-align: center;
     padding: 15px;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,191,165,0.15);
+    cursor: pointer;
 }
 
 .prodotto:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 28px rgba(0,191,165,0.6);
 }
 
 .prodotto img {
@@ -160,16 +198,23 @@ button:hover, .dropbtn:hover {
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.prodotto:hover img {
+    border-color: #00bfa5;
 }
 
 .nome {
     font-size: 18px;
     margin-bottom: 5px;
+    color: #e0e0e0;
 }
 
 .prezzo {
     font-size: 16px;
-    color: #27ae60;
+    color: #00bfa5;
     font-weight: bold;
 }
 
@@ -178,6 +223,60 @@ button:hover, .dropbtn:hover {
     margin: 15px 0 30px;
     font-size: 28px;
     font-weight: bold;
+    color: #00bfa5;
+    text-shadow: 0 0 8px rgba(0,191,165,0.7);
+}
+
+/* ------------------- NOTIZIE ------------------- */
+
+.notizie-catalogo {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.prodotto.notizia {
+    background-color: #153630;
+    border-left: 6px solid #00bfa5;
+    border-radius: 16px;
+    padding: 24px;
+    width: 340px;
+    box-shadow: 0 8px 24px rgba(0,191,165,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+.prodotto.notizia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 38px rgba(0,191,165,0.6);
+    background-color: #1d3f3a;
+}
+
+.prodotto.notizia h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.prodotto.notizia img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.prodotto.notizia .date {
+    font-size: 14px;
+    color: #00bfa5;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.prodotto.notizia .contenuto-notizia {
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 
@@ -194,6 +293,7 @@ button:hover, .dropbtn:hover {
     max-width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px;
 }
 
 /* ------------------- RESPONSIVE ------------------- */
@@ -229,6 +329,10 @@ button:hover, .dropbtn:hover {
     .prodotto {
         width: 45%;
     }
+
+    .prodotto.notizia {
+        width: 90%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -256,6 +360,8 @@ button:hover, .dropbtn:hover {
     .dropdown {
         width: 100%;
     }
-   
-}
 
+    .prodotto.notizia {
+        width: 100%;
+    }
+}

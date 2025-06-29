@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestione Catalogo - Admin</title>
-    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
+    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/admCatalogo.css">
     <script src="<%= request.getContextPath() %>/scripts/adminCatalogo.js"></script>
 </head>
 <body>

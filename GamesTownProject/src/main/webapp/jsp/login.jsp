@@ -20,13 +20,10 @@
 <input type="password" placeholder="Password" name="password" id="password" required>
 <span id="passwordError" class="error-message"></span>
         
-        <a href="password-dimenticata.jsp" class="forgot-password">Hai dimenticato la password?</a>
+     
         
         <button type="submit">Accedi</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-
+   
         <% String errore = (String) request.getAttribute("errore");
            if (errore != null) { %>
            <p style="color:red; text-align:center;"><%= errore %></p>

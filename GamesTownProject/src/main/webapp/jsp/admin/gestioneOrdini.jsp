@@ -31,7 +31,7 @@
 <html>
 <head>
     <title>Visualizza Ordini - Admin</title>
-    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
+    <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/admin.css">
 </head>
 <body>
     <h1>Visualizza Ordini</h1>
@@ -52,7 +52,7 @@
         if (ordini != null && !ordini.isEmpty()) {
             for (Ordine o : ordini) {
     %>
-        <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+        <div class="ordine-card" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
             <p><strong>Ordine ID:</strong> <%= o.getId() %></p>
             <p><strong>Cliente:</strong> <%= o.getIdUtente() %></p>
             <p><strong>Data Ordine:</strong> 

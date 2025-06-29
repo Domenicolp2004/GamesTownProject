@@ -77,6 +77,7 @@
 <%
     }
 %>
+<%@ include file="footer.jsp" %>
 
 <script src="<%= request.getContextPath() %>/scripts/carrello.js"></script>
 

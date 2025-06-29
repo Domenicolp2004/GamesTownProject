@@ -36,7 +36,10 @@
     <%
         }
     %>
+  
 </div>
+
+  <%@ include file="footer.jsp" %>
 
 <script src="<%= request.getContextPath() %>/scripts/videogiochi.js"></script>
 </body>
