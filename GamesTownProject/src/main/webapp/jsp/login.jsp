@@ -28,8 +28,13 @@
            if (errore != null) { %>
            <p style="color:red; text-align:center;"><%= errore %></p>
         <% } %>
-    </div>
+ </div>
+<div style="text-align: center; margin-top: 15px;">
+    <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
+</div>
+
 </form>
+
 
 <script src="<%= request.getContextPath() %>/scripts/login.js"></script>
 </body>

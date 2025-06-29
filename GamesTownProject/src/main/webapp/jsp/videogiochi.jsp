@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/main.css">
 </head>
 <body>
-
+<%@ include file="header.jsp" %>
 <h1 align="center">Videogiochi disponibili</h1>
 
 <div class="catalogo" id="catalogoVideogiochi">

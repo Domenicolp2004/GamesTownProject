@@ -3,8 +3,8 @@
 body {
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
-    background-color: #121212; /* sfondo scuro ma meno nero puro */
-    color: #e0e0e0; /* testo chiaro, comodo per lettura */
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 .container {
@@ -32,7 +32,7 @@ footer {
 .user-section p {
     display: inline-block;
     margin-right: 10px;
-    color: white; /* o colore adatto al tema */
+    color: white;
 }
 
 .btn {
@@ -76,7 +76,7 @@ button, .dropbtn {
 }
 
 button:hover, .dropbtn:hover {
-    background-color: #00bfa5; /* verde acqua */
+    background-color: #00bfa5;
     color: #121212;
     box-shadow: 0 6px 12px rgba(0,191,165,0.6);
 }
@@ -86,7 +86,15 @@ button:hover, .dropbtn:hover {
 .topnav {
     background-color: #121212;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.topnav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .topnav a {
@@ -111,21 +119,30 @@ button:hover, .dropbtn:hover {
     box-shadow: 0 4px 12px rgba(0,191,165,0.6);
 }
 
-/* ------------------- LOGIN ------------------- */
+.topnav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-.loginbar a {
+.topnav-right a {
     color: #e0e0e0;
-    padding: 16px 18px;
     text-decoration: none;
+    padding: 14px 16px;
     font-size: 17px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.loginbar {
-    text-align: right;
+.topnav-right a:hover {
+    background-color: #00bfa5;
+    color: #121212;
 }
 
-.lang-btn {
-    font-size: 18px;
+.saluto {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #e0e0e0;
 }
 
 /* ------------------- DROPDOWN ------------------- */
@@ -178,7 +195,7 @@ button:hover, .dropbtn:hover {
 }
 
 .prodotto {
-    background-color: #121212; /* stesso colore dello sfondo */
+    background-color: #121212;
     border-radius: 10px;
     width: 200px;
     text-align: center;
@@ -279,8 +296,6 @@ button:hover, .dropbtn:hover {
     line-height: 1.6;
 }
 
-
-
 /* ------------------- IMMAGINE GRANDE ------------------- */
 
 .immag {
@@ -301,67 +316,22 @@ button:hover, .dropbtn:hover {
 @media (max-width: 992px) {
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto 1fr auto;
         height: auto;
     }
 
-    .sidebar, .news-section {
-        display: none;
-    }
-
-    .main-content {
-        padding: 10px;
-    }
-
-    .topnav, .loginbar {
+    .topnav {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .search-bar {
-        width: 80%;
+    .topnav-left, .topnav-right {
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 10px;
     }
 
-    .catalogo {
-        gap: 15px;
-    }
-
-    .prodotto {
-        width: 45%;
-    }
-
-    .prodotto.notizia {
-        width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .topnav a,
-    .loginbar a,
-    .dropbtn,
-    button {
-        width: 90%;
-        text-align: center;
-    }
-
-    .search-bar {
-        width: 90%;
-    }
-
-    .prodotto {
-        width: 90%;
-    }
-
-    .dropdown-content {
-        position: static;
-        width: 100%;
-    }
-
-    .dropdown {
-        width: 100%;
-    }
-
-    .prodotto.notizia {
-        width: 100%;
+    .topnav-right {
+        justify-content: flex-start;
     }
 }

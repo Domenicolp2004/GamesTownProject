@@ -44,7 +44,11 @@
        <p style="color:green; text-align:center;"><%= successo %></p>
     <% } %>
   </div>
+<div style="text-align: center; margin-top: 15px;">
+    <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
+</div>
 </form>
+
 
 <script src="<%= request.getContextPath() %>/scripts/registrazione.js"></script>
 </body>

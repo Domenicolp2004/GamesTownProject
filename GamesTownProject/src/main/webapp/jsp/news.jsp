@@ -13,7 +13,6 @@
 
 <div class="catalogo" id="newsCatalogo">
    	
-   
     <%
         List<Notizia> listaNotizie = (List<Notizia>) request.getAttribute("listaNotizie");
         if (listaNotizie != null && !listaNotizie.isEmpty()) {
