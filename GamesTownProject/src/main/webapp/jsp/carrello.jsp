@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/carrello.css">
 </head>
 <body>
-
+<div class="container">
 <%
     Carrello carrello = (Carrello) session.getAttribute("carrello");
     if (carrello == null || carrello.getItems().isEmpty()) {
@@ -21,36 +21,41 @@
 <%
     } else {
 %>
+    <a href="<%= request.getContextPath() %>/HomeServlet" class="back-link">← Torna alla Home</a>
     <table>
-        <tr><th>Titolo</th><th>Prezzo</th><th>Quantità</th><th>Totale</th><th>Azioni</th></tr>
+        <tr>
+            <th>Titolo</th>
+            <th>Prezzo</th>
+            <th>Quantità</th>
+            <th>Totale</th>
+            <th>Azioni</th>
+        </tr>
 <%
         for (ItemCarrello item : carrello.getItems()) {
             Videogioco videogioco = item.getVideogioco();
 %>
         <tr>
-            <td><%= videogioco.getTitolo() %></td>
-            <td><%= videogioco.getPrezzo() %>€</td>
-            <td>
+            <td data-label="Titolo"><%= videogioco.getTitolo() %></td>
+            <td data-label="Prezzo"><%= videogioco.getPrezzo() %>€</td>
+            <td data-label="Quantità">
                 <form action="<%= request.getContextPath() %>/AggiornaQuantitaServlet" method="post" class="form-quantita">
                     <input type="hidden" name="id" value="<%= videogioco.getId() %>" />
                     <input type="number" name="quantita" value="<%= item.getQuantita() %>" min="1" max="99" required />
                     <button type="submit">Aggiorna</button>
                 </form>
             </td>
-            <td><%= item.getTotale() %>€</td>
-            <td>
+            <td data-label="Totale"><%= item.getTotale() %>€</td>
+            <td data-label="Azioni">
                 <form action="<%= request.getContextPath() %>/RemoveCarrelloServlet" method="post" class="form-rimuovi">
                     <input type="hidden" name="id" value="<%= videogioco.getId() %>" />
                     <button type="submit">Rimuovi</button>
-               	
                 </form>
             </td>
         </tr>
 <%
         }
 %>
-        <tr>
-            <a href="<%= request.getContextPath() %>/HomeServlet">← Torna alla Home</a>
+        <tr class="total-row">
             <td colspan="3"><strong>Totale carrello</strong></td>
             <td><%= carrello.getTotale() %>€</td>
             <td>
@@ -75,15 +80,13 @@
         </select><br><br>
 
         <button type="submit">Conferma Ordine</button>
-    	
-    
     </form>
-    
 <%
     }
 %>
-<%@ include file="footer.jsp" %>
+</div>
 
+<%@ include file="footer.jsp" %>
 <script src="<%= request.getContextPath() %>/scripts/carrello.js"></script>
 
 </body>

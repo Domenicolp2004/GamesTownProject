@@ -1,32 +1,34 @@
-/* ------------------- STILE COERENTE PER TABELLA ------------------- */
-
 body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #121212;
-    margin: 40px auto;
-    max-width: 900px;
     color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #00bfa5;
-    text-shadow: 0 0 6px rgba(0,191,165,0.7);
+    text-shadow: 0 0 6px rgba(0, 191, 165, 0.7);
 }
 
-
-
-
+/* ------------------------ TABELLA ------------------------ */
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: #1c1c1c;
-    box-shadow: 0 0 10px rgba(0,191,165,0.2);
+    box-shadow: 0 0 10px rgba(0, 191, 165, 0.2);
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 30px;
 }
-
 
 th, td {
     padding: 15px 20px;
@@ -48,13 +50,22 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
-.empty-message {
-    color: #666;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 50px;
+.total-row td {
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #153630;
+    color: #00bfa5;
+    border-bottom: none;
 }
 
+.empty-message {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 1.3rem;
+    color: #999;
+}
+
+/* ------------------------ FORM E BOTTONI ------------------------ */
 button {
     background-color: #00bfa5;
     color: #121212;
@@ -72,10 +83,107 @@ button:hover {
     box-shadow: 0 6px 14px rgba(0,191,165,0.6);
 }
 
-.total-row td {
-    font-weight: bold;
-    font-size: 1.1rem;
-    background-color: #153630;
+.form-ordine {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #222;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,191,165,0.4);
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.form-ordine label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.form-ordine textarea,
+.form-ordine select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1.5px solid #00bfa5;
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.form-ordine textarea:focus,
+.form-ordine select:focus {
+    border-color: #009a89;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,191,165,0.6);
+}
+
+/* ------------------------ FOOTER ------------------------ */
+footer {
+    background-color: #1f2f2b;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* ------------------------ RESPONSIVE TABELLA ------------------------ */
+@media screen and (max-width: 768px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        background-color: #1c1c1c;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    td {
+        text-align: left;
+        padding: 10px;
+        border: none;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #00bfa5;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .total-row td {
+        text-align: center;
+    }
+
+    .form-quantita input[type="number"] {
+        width: 60px;
+    }
+}
+
+/* ------------------------ LINK HOME ------------------------ */
+.home-link {
     color: #00bfa5;
-    border-bottom: none;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    text-decoration: underline;
 }

@@ -20,7 +20,19 @@
 <div class="container">
 
     <div class="sidebar">
-
+	    <aside class="news-section">
+        <h3>Perché sceglierci?</h3>
+                  <div class="offerte-lamp">
+            🔥 <strong>I migliori titoli sul mercato</strong>
+        </div>
+          <div class="offerte-lamp">
+            🔥 <strong>Prezzi Competitivi</strong>
+        </div>
+          <div class="offerte-lamp">
+            🔥 <strong>Ampia scelta</strong>
+        </div>
+        
+    </aside>
     </div>
 
  
@@ -28,6 +40,7 @@
 
     <main class="main-content">
      <%@ include file="header.jsp" %>
+     
 
 
         <div class="titolo">Prodotti in Evidenza</div>
@@ -43,7 +56,7 @@
                     <p>Prezzo: <%= gioco.getPrezzo() %> euro</p>
                     <form action="<%= request.getContextPath() %>/AddCarrelloServlet" method="post">
                         <input type="hidden" name="id" value="<%= gioco.getId() %>"/>
-                        <button type="submit">Aggiungi al carrello</button>
+                       <button type="submit" class="btn-add">Aggiungi al carrello</button>
                     </form>
                 </div>
             <%
@@ -65,7 +78,7 @@
                     <p>Prezzo: <%= g.getPrezzo() %> euro</p>
                     <form action="<%= request.getContextPath() %>/AddCarrelloServlet" method="post">
                         <input type="hidden" name="id" value="<%= g.getId() %>"/>
-                        <button type="submit">Aggiungi al carrello</button>
+                         <button type="submit" class="btn-add">Aggiungi al carrello</button>
                     </form>
                 </div>
             <%
@@ -76,10 +89,26 @@
 
     </main>
 
+   <div>
     <aside class="news-section">
- 
+        <h3>Info sull'acquisto</h3>
+            <div class="offerte-lamp">
+            🔥 <strong>Registrati per ordinare</strong>
+        </div>
+        <div class="offerte-lamp">
+            🔥 <strong>Pagamento alla Consegna</strong>
+        </div>
+             <div class="offerte-lamp">
+            🔥 <strong>Carta di credito</strong>
+        </div>
+          <div class="offerte-lamp">
+            🔥 <strong>PayPal supportata</strong>
+        </div>
+       
+        
     </aside>
 
+</div>
     <%@ include file="footer.jsp" %>
 
 </div>
