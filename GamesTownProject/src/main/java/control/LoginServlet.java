@@ -1,5 +1,6 @@
 package control;
 
+import org.mindrot.jbcrypt.BCrypt;
 import model.DataBaseConnection;
 import model.Utente;
 import model.UtenteDAO;
@@ -22,10 +23,14 @@ public class LoginServlet extends HttpServlet {
 
         try (Connection conn = DataBaseConnection.getConnection()) {
             UtenteDAO dao = new UtenteDAO(conn);
-            Utente utente = dao.loginUtente(email, password);
+            Utente utente = dao.doRetrieveByEmail(email);
 
-            if (utente != null) {
-                HttpSession session = request.getSession();
+            if (utente != null && BCrypt.checkpw(password, utente.getPassword())) {
+            	HttpSession oldSession = request.getSession(false);
+            	if (oldSession != null) {
+            	    oldSession.invalidate(); // Invalida eventuale sessione precedente
+            	}
+            	HttpSession session = request.getSession(true);
                 session.setAttribute("utente", utente);
 
                 // Genera un token unico per la sessione

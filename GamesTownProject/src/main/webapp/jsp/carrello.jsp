@@ -42,6 +42,7 @@
                 <form action="<%= request.getContextPath() %>/RemoveCarrelloServlet" method="post" class="form-rimuovi">
                     <input type="hidden" name="id" value="<%= videogioco.getId() %>" />
                     <button type="submit">Rimuovi</button>
+               	
                 </form>
             </td>
         </tr>
@@ -49,6 +50,7 @@
         }
 %>
         <tr>
+            <a href="<%= request.getContextPath() %>/HomeServlet">← Torna alla Home</a>
             <td colspan="3"><strong>Totale carrello</strong></td>
             <td><%= carrello.getTotale() %>€</td>
             <td>
@@ -73,7 +75,10 @@
         </select><br><br>
 
         <button type="submit">Conferma Ordine</button>
+    	
+    
     </form>
+    
 <%
     }
 %>

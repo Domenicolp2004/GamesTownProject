@@ -1,5 +1,6 @@
 package control;
 
+import org.mindrot.jbcrypt.BCrypt;
 import model.DataBaseConnection;
 import model.Utente;
 import model.UtenteDAO;
@@ -21,14 +22,15 @@ public class RegistrazioneServlet extends HttpServlet {
         String cognome = request.getParameter("cognome");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String ruolo = "utente"; 
+        
 
         Utente utente = new Utente();
         utente.setNome(nome);
         utente.setCognome(cognome);
         utente.setEmail(email);
-        utente.setPassword(password);
-        utente.setRuolo(ruolo);
+        String hashed = BCrypt.hashpw(password, BCrypt.gensalt(12)); // 
+        utente.setPassword(hashed);
+
 
         try (Connection conn = DataBaseConnection.getConnection()) {
             UtenteDAO dao = new UtenteDAO(conn);
