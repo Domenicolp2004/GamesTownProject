@@ -121,6 +121,25 @@ button:hover {
     box-shadow: 0 0 8px rgba(0,191,165,0.6);
 }
 
+.back-link {
+    display: inline-block;
+    color: #00bfa5;
+    background-color: #1f2f2b;
+    padding: 10px 16px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(0, 191, 165, 0.4);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #00bfa5;
+    color: #121212;
+}
+
 /* ------------------------ FOOTER ------------------------ */
 footer {
     background-color: #1f2f2b;
@@ -130,6 +149,7 @@ footer {
     font-size: 14px;
     margin-top: 40px;
 }
+
 
 /* ------------------------ RESPONSIVE TABELLA ------------------------ */
 @media screen and (max-width: 768px) {

@@ -77,4 +77,17 @@ public class UtenteDAO {
             }
         }
     }
+    
+    public boolean updateUtente(Utente utente) throws SQLException {
+        String sql = "UPDATE utente SET nome = ?, cognome = ?, email = ?, password = ? WHERE id = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, utente.getNome());
+            stmt.setString(2, utente.getCognome());
+            stmt.setString(3, utente.getEmail());
+            stmt.setString(4, utente.getPassword());  // Assumendo password già hashata se usi hash
+            stmt.setInt(5, utente.getId());
+            int result = stmt.executeUpdate();
+            return result > 0;
+        }
+    }
 }

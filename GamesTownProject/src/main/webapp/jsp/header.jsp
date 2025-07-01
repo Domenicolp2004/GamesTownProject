@@ -26,12 +26,13 @@
         <!-- DESTRA: login, logout, carrello -->
         <div class="topnav-right">
             <% if (utente == null) { %>
-                <a href="<%= request.getContextPath() %>/jsp/carrello.jsp" id="carrelloLink"> <img src="<%= request.getContextPath() %>/images/cart.png"></a>
+                <a href="<%= request.getContextPath() %>/jsp/carrello.jsp" id="carrelloLink"> <img src="<%= request.getContextPath() %>/images/carr.png"></a>
                 <a href="<%= request.getContextPath() %>/jsp/login.jsp">Login</a>
                 <a href="<%= request.getContextPath() %>/jsp/registrazione.jsp">Registrazione</a>
             <% } else { %>
                 <span class="saluto">Ciao, <%= utente.getNome() %>!</span>
-                <a href="<%= request.getContextPath() %>/jsp/carrello.jsp" id="carrelloLinkUser"><img src="<%= request.getContextPath() %>/images/cart.png"></a>
+                <a href="<%= request.getContextPath() %>/jsp/carrello.jsp" id="carrelloLinkUser"><img src="<%= request.getContextPath() %>/images/carr.png"></a>
+               <a href="<%= request.getContextPath() %>/jsp/profile.jsp">Modifica Profilo</a>
                 <a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a>
             <% } %>
         </div>

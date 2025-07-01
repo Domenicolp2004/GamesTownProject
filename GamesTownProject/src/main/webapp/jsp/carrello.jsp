@@ -13,6 +13,7 @@
 </head>
 <body>
 <div class="container">
+	<a href="<%= request.getContextPath() %>/HomeServlet" class="back-link">← Torna alla Home</a>
 <%
     Carrello carrello = (Carrello) session.getAttribute("carrello");
     if (carrello == null || carrello.getItems().isEmpty()) {
@@ -21,7 +22,7 @@
 <%
     } else {
 %>
-    <a href="<%= request.getContextPath() %>/HomeServlet" class="back-link">← Torna alla Home</a>
+    
     <table>
         <tr>
             <th>Titolo</th>
