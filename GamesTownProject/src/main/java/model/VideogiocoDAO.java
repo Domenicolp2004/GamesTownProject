@@ -38,6 +38,34 @@ public class VideogiocoDAO {
         return lista;
     }
 
+    public List<Videogioco> getVideogiochiByCategoria(int categoriaId) throws SQLException {
+        List<Videogioco> lista = new ArrayList<>();
+
+        String sql = "SELECT v.* FROM videogioco v " +
+                     "JOIN videogioco_categoria vc ON v.id = vc.id_videogioco " +
+                     "WHERE vc.id_categoria = ? AND v.attivo = true";
+
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, categoriaId);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Videogioco v = new Videogioco();
+                    v.setId(rs.getInt("id"));
+                    v.setTitolo(rs.getString("titolo"));
+                    v.setDescrizione(rs.getString("descrizione"));
+                    v.setPrezzo(rs.getDouble("prezzo"));
+                    v.setDataUscita(rs.getString("dataUscita"));
+                    v.setGenere(rs.getString("genere"));
+                    v.setPiattaforma(rs.getString("piattaforma"));
+                    v.setImmagine(rs.getString("immagine"));
+                    v.setAttivo(rs.getBoolean("attivo"));
+                    lista.add(v);
+                }
+            }
+        }
+
+        return lista;
+    }
     // Prendi videogame attivo per id (ad esempio per dettagli prodotto)
     public Videogioco getVideogiocoById(int id) throws SQLException {
         String sql = "SELECT * FROM videogioco WHERE id = ? AND attivo = TRUE";

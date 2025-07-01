@@ -1,5 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Videogioco" %>
+<%@ page import="model.Categoria" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,26 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
+
+<%
+    List<Categoria> listaCategorie = (List<Categoria>) request.getAttribute("listaCategorie");
+    Integer categoriaSelezionata = (Integer) request.getAttribute("categoriaSelezionata");
+%>
+<form method="get" action="<%= request.getContextPath() + "/VideogiochiServlet" %>">
+    <label for="categoriaSelect">Filtra per categoria:</label>
+    <select name="categoriaId" id="categoriaSelect">
+    <option value="">Tutte le categorie</option>
+    <% if (listaCategorie != null) {
+        for (Categoria c : listaCategorie) {
+            String selected = (categoriaSelezionata != null && categoriaSelezionata == c.getId()) ? "selected" : "";
+    %>
+        <option value="<%= c.getId() %>" <%= selected %>><%= c.getNome() %></option>
+    <%  }
+       }
+    %>
+</select>
+    <noscript><button type="submit">Filtra</button></noscript>
+</form>
 <h1 align="center">Videogiochi disponibili</h1>
 
 <div class="catalogo" id="catalogoVideogiochi">
