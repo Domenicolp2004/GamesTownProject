@@ -16,22 +16,24 @@
     List<Categoria> listaCategorie = (List<Categoria>) request.getAttribute("listaCategorie");
     Integer categoriaSelezionata = (Integer) request.getAttribute("categoriaSelezionata");
 %>
-<form method="get" action="<%= request.getContextPath() + "/VideogiochiServlet" %>">
-    <label for="categoriaSelect">Filtra per categoria:</label>
-    <select name="categoriaId" id="categoriaSelect">
-    <option value="">Tutte le categorie</option>
-    <% if (listaCategorie != null) {
-        for (Categoria c : listaCategorie) {
-            String selected = (categoriaSelezionata != null && categoriaSelezionata == c.getId()) ? "selected" : "";
-    %>
-        <option value="<%= c.getId() %>" <%= selected %>><%= c.getNome() %></option>
-    <%  }
-       }
-    %>
-</select>
-    <noscript><button type="submit">Filtra</button></noscript>
-</form>
 <h1 align="center">Videogiochi disponibili</h1>
+<form method="get" action="" class="categoria-filter-form">
+    <div class="categoria-filter">
+        <label for="categoriaSelect">Filtra per categoria:</label>
+        <select name="categoriaId" id="categoriaSelect">
+            <option value="">Tutte le categorie</option>
+            <% if (listaCategorie != null) {
+                for (Categoria c : listaCategorie) {
+                    String selected = (categoriaSelezionata != null && categoriaSelezionata == c.getId()) ? "selected" : "";
+            %>
+                <option value="<%= c.getId() %>" <%= selected %>><%= c.getNome() %></option>
+            <%  }
+            } %>
+        </select>
+        <noscript><button type="submit">Filtra</button></noscript>
+    </div>
+</form>
+
 
 <div class="catalogo" id="catalogoVideogiochi">
     <%

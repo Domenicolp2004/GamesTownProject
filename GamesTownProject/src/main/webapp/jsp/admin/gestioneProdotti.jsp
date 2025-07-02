@@ -21,7 +21,7 @@
 </head>
 <body>
     <h1>Gestione Catalogo Prodotti</h1>
-	<a href="<%= request.getContextPath() %>/jsp/admin/adminHome.jsp">Torna alla Home Admin</a>
+	<a href="<%= request.getContextPath() %>/jsp/admin/adminHome.jsp"  class="home-link">Torna alla Home Admin</a>
     
     <h2>Inserisci Nuovo Videogioco</h2>
     <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post">

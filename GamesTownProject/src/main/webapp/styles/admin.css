@@ -143,6 +143,8 @@ form button:hover {
 }
 
 /* Link home admin */
+
+
 a.home-link {
     display: inline-block;
     margin-bottom: 20px;
@@ -151,6 +153,8 @@ a.home-link {
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
+
 
 a.home-link:hover {
     color: #45a049;
