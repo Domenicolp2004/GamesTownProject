@@ -64,7 +64,8 @@
                 }
             %>
         </div>
-
+	<br>
+	<br>
         <div class="titolo">Più Economici</div>
         <div class="catalogo">
             <%
@@ -97,9 +98,6 @@
         </div>
         <div class="offerte-lamp">
             🔥 <strong>Pagamento alla Consegna</strong>
-        </div>
-             <div class="offerte-lamp">
-            🔥 <strong>Carta di credito</strong>
         </div>
           <div class="offerte-lamp">
             🔥 <strong>PayPal supportata</strong>

@@ -36,7 +36,7 @@
 <body>
     <h1>Visualizza Ordini</h1>
     <p>Token in sessione: <%= token %></p>
-    <a href="adminHome.jsp">Torna alla Home Admin</a>
+    <a href="<%= request.getContextPath() %>/jsp/admin/adminHome.jsp">Torna alla Home Admin</a>
 
 <form method="get" action="<%= request.getContextPath() %>/AdminOrdiniServlet">
     <input type="hidden" name="token" value="<%= session.getAttribute("token") %>" />

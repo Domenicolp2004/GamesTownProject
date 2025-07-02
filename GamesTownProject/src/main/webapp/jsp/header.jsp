@@ -33,7 +33,8 @@
                 <span class="saluto">Ciao, <%= utente.getNome() %>!</span>
                 <a href="<%= request.getContextPath() %>/jsp/carrello.jsp" id="carrelloLinkUser"><img src="<%= request.getContextPath() %>/images/carr.png"></a>
                <a href="<%= request.getContextPath() %>/jsp/profile.jsp">Modifica Profilo</a>
-                <a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a>
+              <a href="<%= request.getContextPath() %>/ListaOrdiniServlet">I miei ordini</a>
+               <a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a>
             <% } %>
         </div>
     </div>
