@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.RigaOrdine" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="model.Ordine" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -24,11 +25,14 @@
 <%
     } else {
 %>
-
+	
     <h2>Informazioni Generali</h2>
     <ul>
         <li><strong>ID Ordine:</strong> <%= ordine.getId() %></li>
-        <li><strong>Data:</strong> <%= ordine.getDataOrdine() %></li>
+        <%
+   			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // o "yyyy-MM-dd"
+			%>
+        <li><strong>Data:</strong> <%= sdf.format(ordine.getDataOrdine()) %></li>
         <li><strong>Totale:</strong> <%= String.format("%.2f", ordine.getTotale()) %> €</li>
         <li><strong>Stato:</strong> <%= ordine.getStato() %></li>
         <li><strong>Indirizzo Spedizione:</strong> <%= ordine.getIndirizzoSpedizione() %></li>

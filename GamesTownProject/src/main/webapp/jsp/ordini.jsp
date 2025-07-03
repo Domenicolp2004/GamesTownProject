@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Ordine" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%
     String confermaSuccesso = (String) session.getAttribute("confermaSuccesso");
@@ -48,7 +49,10 @@
 %>
         <tr>
             <td><%= ordine.getId() %></td>
-            <td><%= ordine.getDataOrdine() %></td>
+         <%
+   			 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // o "yyyy-MM-dd"
+			%>
+			<td><%= sdf.format(ordine.getDataOrdine()) %></td>
             <td><%= String.format("%.2f", ordine.getTotale()) %> €</td>
             <td><%= ordine.getStato() %></td>
             <td><%= ordine.getIndirizzoSpedizione() %></td>
@@ -62,7 +66,9 @@
 <%
     }
 %>
-
+<div style="text-align: center; margin-top: 15px;">
+    <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
+</div>
 <script src="<%= request.getContextPath() %>/scripts/ordini.js"></script>
 </body>
 </html>

@@ -303,10 +303,10 @@ button:hover, .dropbtn:hover {
     padding: 12px;
     margin-bottom: 20px;
     font-weight: bold;
-    color: #ff4500;
+    color: #F3F2EE;
     text-align: center;
     animation: lampeggia 1.5s infinite;
-    box-shadow: 0 0 10px #ff4500;
+    box-shadow: 0 0 10px #F3F2EE;
 }
 
 @keyframes lampeggia {

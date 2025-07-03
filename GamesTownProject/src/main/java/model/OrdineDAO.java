@@ -15,29 +15,41 @@ public class OrdineDAO {
     // Salva un ordine e restituisce l'ID generato
     
     public int salvaOrdine(Ordine ordine) throws SQLException {
-    	System.out.println("Sto salvando ordine per utente ID: " + ordine.getIdUtente());
-    	String sql = "INSERT INTO ordine (id_utente, data_ordine, stato, totale, indirizzo_spedizione, metodo_pagamento) " +
-                     "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ordine (id_utente, data_ordine, stato, totale, indirizzo_spedizione, metodo_pagamento, nome_cliente, cognome_cliente, email_cliente) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setInt(1, ordine.getIdUtente());
-            stmt.setDate(2, new java.sql.Date(ordine.getDataOrdine().getTime()));
+        	if (ordine.getIdUtente() != null) {
+        	    stmt.setInt(1, ordine.getIdUtente());
+        	} else {
+        	    stmt.setNull(1, Types.INTEGER);
+        	}
+
+            stmt.setTimestamp(2, new Timestamp(ordine.getDataOrdine().getTime()));
             stmt.setString(3, ordine.getStato());
             stmt.setDouble(4, ordine.getTotale());
             stmt.setString(5, ordine.getIndirizzoSpedizione());
             stmt.setString(6, ordine.getMetodoPagamento());
+            stmt.setString(7, ordine.getNomeCliente());
+            stmt.setString(8, ordine.getCognomeCliente());
+            stmt.setString(9, ordine.getEmailCliente());
 
-            stmt.executeUpdate();
+            int rows = stmt.executeUpdate();
 
-            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    return generatedKeys.getInt(1);
+            if (rows > 0) {
+                try (ResultSet rs = stmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        return rs.getInt(1);
+                    }
                 }
             }
         }
+
         return -1;
     }
+   
     public Ordine getOrdineById(int idOrdine) throws SQLException {
-        String sql = "SELECT * FROM ordine WHERE id = ?";
+       String sql = "SELECT * FROM ordine WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, idOrdine);
             try (ResultSet rs = stmt.executeQuery()) {

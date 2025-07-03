@@ -121,6 +121,32 @@ button:hover {
     box-shadow: 0 0 8px rgba(0,191,165,0.6);
 }
 
+.form-ordine input[type="text"],
+.form-ordine input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1.5px solid #00bfa5;
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-ordine input[type="text"]::placeholder,
+.form-ordine input[type="email"]::placeholder {
+    color: #777;
+}
+
+.form-ordine input[type="text"]:focus,
+.form-ordine input[type="email"]:focus {
+    border-color: #009a89;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 191, 165, 0.6);
+}
+
 .back-link {
     display: inline-block;
     color: #00bfa5;

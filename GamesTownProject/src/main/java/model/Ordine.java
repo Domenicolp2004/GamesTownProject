@@ -5,13 +5,17 @@ import java.util.List;
 
 public class Ordine {
     private int id;
-    private int idUtente;
+    private Integer idUtente;
     private Date dataOrdine;
     private String stato;
     private double totale;
     private String indirizzoSpedizione;
     private String metodoPagamento;
+    private String nomeCliente;
+    private String cognomeCliente;
+    private String emailCliente;
 
+    // Getter & Setter
     
 
     public int getId() {
@@ -22,11 +26,11 @@ public class Ordine {
         this.id = id;
     }
 
-    public int getIdUtente() {
+    public Integer getIdUtente() {
         return idUtente;
     }
 
-    public void setIdUtente(int idUtente) {
+    public void setIdUtente(Integer idUtente) {
         this.idUtente = idUtente;
     }
 
@@ -70,5 +74,14 @@ public class Ordine {
         this.metodoPagamento = metodoPagamento;
     }
 
+    public String getNomeCliente() { return nomeCliente; }
+    public void setNomeCliente(String nomeCliente) { this.nomeCliente = nomeCliente; }
+
+    public String getCognomeCliente() { return cognomeCliente; }
+    public void setCognomeCliente(String cognomeCliente) { this.cognomeCliente = cognomeCliente; }
+
+    public String getEmailCliente() { return emailCliente; }
+    public void setEmailCliente(String emailCliente) { this.emailCliente = emailCliente; }
+    
    
 }

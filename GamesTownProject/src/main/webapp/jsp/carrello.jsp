@@ -1,5 +1,6 @@
 <%@ page import="model.Carrello, model.ItemCarrello" %>
 <%@ page import="java.util.*" %>
+<%@ page import="model.Utente" %>
 <%@ page import="model.Videogioco" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
@@ -67,21 +68,34 @@
         </tr>
     </table>
 
-    <form action="<%= request.getContextPath() %>/ConfermaOrdineServlet" method="post" class="form-ordine">
-        <h3>Conferma Ordine</h3>
-        <label for="indirizzoSpedizione">Indirizzo di spedizione:</label><br>
-        <textarea name="indirizzoSpedizione" id="indirizzoSpedizione" rows="3" required></textarea><br><br>
+<form action="<%= request.getContextPath() %>/ConfermaOrdineServlet" method="post" class="form-ordine">
+    <h3>Conferma Ordine</h3>
 
-        <label for="metodoPagamento">Metodo di pagamento:</label><br>
-        <select name="metodoPagamento" id="metodoPagamento" required>
-            <option value="">Seleziona...</option>
-            <option value="Carta di credito">Carta di credito</option>
-            <option value="PayPal">PayPal</option>
-            <option value="Pagamento alla consegna">Pagamento alla consegna</option>
-        </select><br><br>
+    <% Utente utente = (Utente) session.getAttribute("utente");
+       if (utente == null) { %>
+        <label for="nome">Nome:</label><br>
+        <input type="text" name="nome" id="nome" required><br><br>
 
-        <button type="submit">Conferma Ordine</button>
-    </form>
+        <label for="cognome">Cognome:</label><br>
+        <input type="text" name="cognome" id="cognome" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email" required><br><br>
+    <% } %>
+
+    <label for="indirizzoSpedizione">Indirizzo di spedizione:</label><br>
+    <textarea name="indirizzoSpedizione" id="indirizzoSpedizione" rows="3" required></textarea><br><br>
+
+    <label for="metodoPagamento">Metodo di pagamento:</label><br>
+    <select name="metodoPagamento" id="metodoPagamento" required>
+        <option value="">Seleziona...</option>
+        <option value="Carta di credito">Carta di credito</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Pagamento alla consegna">Pagamento alla consegna</option>
+    </select><br><br>
+
+    <button type="submit">Conferma Ordine</button>
+</form>
 <%
     }
 %>
