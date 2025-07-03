@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-            <div class="topnav-center">
+          <div class="topnav-center">
             <a href="<%= request.getContextPath() %>/HomeServlet">
                 <img src="<%= request.getContextPath() %>/images/logotrasparente4.png" alt="GameTown Logo" class="logo" />
             </a>

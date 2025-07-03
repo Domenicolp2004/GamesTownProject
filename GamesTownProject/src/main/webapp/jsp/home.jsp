@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<%@ include file="header.jsp" %>
 <div class="container">
 
     <div class="sidebar">
@@ -38,7 +38,7 @@
    
 
     <main class="main-content">
-     <%@ include file="header.jsp" %>
+     
      
 
 
