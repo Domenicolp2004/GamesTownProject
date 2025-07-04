@@ -92,19 +92,6 @@ button:hover {
     color: #121212;
 }
 
-.forgot-password {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #00bfa5;
-    text-align: right;
-    text-decoration: none;
-    transition: text-decoration 0.3s ease;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
 
 @media screen and (max-width: 768px) {
     form {
@@ -130,8 +117,7 @@ button:hover {
         font-size: 22px;
     }
 
-    .forgot-password {
-        text-align: center;
-        font-size: 13px;
-    }
+
+
+
 }

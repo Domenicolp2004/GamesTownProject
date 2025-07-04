@@ -19,11 +19,16 @@
 </head>
 <body>
 
+<div class="grazie">
+<h1>Grazie per il tuo ordine!</h1>
+</div>
+
+
 <h1>I miei ordini</h1>
 
-<p id="ordineSuccesso" style="color: green; display: none;">
-    <%= request.getAttribute("confermaSuccesso") != null ? request.getAttribute("confermaSuccesso") : "" %>
-</p>
+  
+ 
+
 
 <%
     List<Ordine> listaOrdini = (List<Ordine>) request.getAttribute("listaOrdini");

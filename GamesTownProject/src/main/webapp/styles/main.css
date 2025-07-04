@@ -60,16 +60,6 @@ footer {
     background-color: #121212;
 }
 
-.search-bar {
-    background-color: #1c1c1c;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 30px;
-    color: #e0e0e0;
-    width: 250px;
-    font-size: 14px;
-    margin-top: 40px;
-}
 
 button, .dropbtn {
     background: #1f2f2b;
@@ -364,20 +354,7 @@ button:hover, .dropbtn:hover {
     line-height: 1.6;
 }
 
-/* ------------------- IMMAGINE GRANDE ------------------- */
 
-.immag {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.immag img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
 
 /* ------------------- RESPONSIVE ------------------- */
 
@@ -433,10 +410,6 @@ button:hover, .dropbtn:hover {
         width: 100%; /* un prodotto per riga */
     }
 
-    .search-bar {
-        width: 100%;
-        max-width: 300px;
-    }
 
     .btn, button, .dropbtn {
         width: 100%;

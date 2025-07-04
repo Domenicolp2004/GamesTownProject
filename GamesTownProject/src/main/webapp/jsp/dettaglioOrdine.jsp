@@ -79,7 +79,7 @@
     }
 %>
 
-<p><a href="<%= request.getContextPath() %>/ListaOrdiniServlet">← Torna alla lista ordini</a></p>
+<p ><a href="<%= request.getContextPath() %>/ListaOrdiniServlet" class="home-link">← Torna alla lista ordini</a></p>
 
 </body>
 </html>
