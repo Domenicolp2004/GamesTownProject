@@ -21,7 +21,7 @@
 
 <h1>I miei ordini</h1>
 
-<p id="ordineSuccesso" style="color: green; display: none;">
+<p id="ordineSuccesso" class="ordsucc">
     <%= request.getAttribute("confermaSuccesso") != null ? request.getAttribute("confermaSuccesso") : "" %>
 </p>
 
@@ -30,7 +30,7 @@
 
     if (listaOrdini == null || listaOrdini.isEmpty()) {
 %>
-    <p>Non hai ancora effettuato ordini.</p>
+    <p class="orders">Non hai ancora effettuato ordini.</p>
 <%
     } else {
 %>
@@ -66,7 +66,7 @@
 <%
     }
 %>
-<div style="text-align: center; margin-top: 15px;">
+<div class="back">
     <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
 </div>
 <script src="<%= request.getContextPath() %>/scripts/ordini.js"></script>

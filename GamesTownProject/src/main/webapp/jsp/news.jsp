@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<h1 align="center">Ultime Notizie</h1>
+<h1>Ultime Notizie</h1>
 
 <div class="catalogo" id="newsCatalogo">
    	

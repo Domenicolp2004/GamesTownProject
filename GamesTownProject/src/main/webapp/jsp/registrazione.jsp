@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600&display=swap" rel="stylesheet">
-    <style>
-      .error-message { color: red; font-size: 0.9em; }
-    </style>
+
 </head>
 <body>
 
 <form id="registrationForm" action="<%= request.getContextPath() %>/RegistrazioneServlet" method="post">
   <div class="container">
-    <h1 align="center">Registrati</h1>
+    <h1>Registrati</h1>
 
     <label for="nome"><b>Nome</b></label>
     <input type="text" placeholder="Nome" name="nome" id="nome" required>
@@ -36,15 +34,15 @@
 
     <% String errore = (String) request.getAttribute("errore");
        if (errore != null) { %>
-       <p style="color:red; text-align:center;"><%= errore %></p>
+       <p class="err"><%= errore %></p>
     <% } %>
 
     <% String successo = (String) request.getAttribute("successo");
        if (successo != null) { %>
-       <p style="color:green; text-align:center;"><%= successo %></p>
+       <p class="succ";"><%= successo %></p>
     <% } %>
   </div>
-<div style="text-align: center; margin-top: 15px;">
+<div class="back">
     <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
 </div>
 </form>

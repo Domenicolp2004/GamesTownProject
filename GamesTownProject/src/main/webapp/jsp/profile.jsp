@@ -33,18 +33,18 @@
 
         <% String errore = (String) request.getAttribute("errore");
            if (errore != null) { %>
-           <p style="color:red; text-align:center; margin-top: 10px;"><%= errore %></p>
+           <p class="err"><%= errore %></p>
         <% } %>
 
         <% String success = (String) request.getAttribute("success");
            if (success != null) { %>
-           <p style="color:green; text-align:center; margin-top: 10px;"><%= success %></p>
+           <p  class="succ"><%= success %></p>
         <% } %>
     </div>
 
-    <div style="text-align: center; margin-top: 15px;">
-        <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
-    </div>
+    <div class="back">
+    <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
+</div>
 </form>
 <script src="<%= request.getContextPath() %>/scripts/profile.js"></script>
 </body>

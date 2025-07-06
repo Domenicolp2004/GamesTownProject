@@ -12,6 +12,7 @@ body {
     height: 100vh;
 }
 
+
 form {
     background-color: #1c1c1c;
     padding: 40px 50px;
@@ -40,6 +41,26 @@ h2 {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
+}
+.err{
+	
+	 color:red; 
+	 text-align:center
+}
+.succ{
+	
+	 color:green;
+	  text-align:center
+}
+
+.error-message { color: red; font-size: 0.9em; }
+
+.back{
+	
+	text-align: center; 
+margin-top: 15px
+	
+	
 }
 
 .home-link:hover {

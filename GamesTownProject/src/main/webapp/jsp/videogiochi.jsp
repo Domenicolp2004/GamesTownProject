@@ -20,7 +20,7 @@
     List<Videogioco> listaVideogiochi = (List<Videogioco>) request.getAttribute("listaVideogiochi");
 %>
 
-<h1 style="text-align: center;">Videogiochi disponibili</h1>
+<h1>Videogiochi disponibili</h1>
 
 <!-- FILTRO CATEGORIA -->
 <form method="get" action="<%= request.getContextPath() %>/CatalogoPerCategoriaServlet" class="categoria-filter-form">
@@ -57,7 +57,7 @@
         </div>
     <% }
     } else { %>
-        <p style="text-align:center;">Nessun videogioco disponibile.</p>
+        <p>Nessun videogioco disponibile.</p>
     <% } %>
 </div>
 

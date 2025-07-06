@@ -51,7 +51,7 @@
         if (ordini != null && !ordini.isEmpty()) {
             for (Ordine o : ordini) {
     %>
-        <div class="ordine-card" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+        <div class="ordine-card">
             <p><strong>Ordine ID:</strong> <%= o.getId() %></p>
             <p><strong>Cliente:</strong> <%= o.getIdUtente() %></p>
             <p><strong>Data Ordine:</strong> 

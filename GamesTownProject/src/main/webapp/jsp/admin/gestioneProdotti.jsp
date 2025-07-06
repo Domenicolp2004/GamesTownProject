@@ -43,7 +43,7 @@
         if (giochi != null && !giochi.isEmpty()) {
             for (Videogioco gioco : giochi) {
     %>
-        <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post" style="border:1px solid #ccc; margin-bottom:10px; padding:10px;">
+        <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post" class="cat">
             <input type="hidden" name="id" value="<%= gioco.getId() %>" />
             <input type="hidden" name="token" value="<%= token %>" />
             Titolo: <input type="text" name="titolo" value="<%= gioco.getTitolo() %>" required /><br/>

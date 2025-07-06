@@ -11,12 +11,30 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+.back{
+	
+	text-align: center; 
+margin-top: 15px
+	
+	
+}
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #00bfa5;
     text-shadow: 0 0 6px rgba(0, 191, 165, 0.7);
+}
+
+.orders{
+	text-align:center;
+	padding-bottom:20px;
+}
+
+.ordsucc{
+	
+	color: green; 
+	display: none;
 }
 
 /* ------------------------ TABELLA ------------------------ */

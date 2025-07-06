@@ -26,10 +26,10 @@
    
         <% String errore = (String) request.getAttribute("errore");
            if (errore != null) { %>
-           <p style="color:red; text-align:center;"><%= errore %></p>
+           <p class="err" ><%= errore %></p>
         <% } %>
  </div>
-<div style="text-align: center; margin-top: 15px;">
+<div class="back">
     <a href="<%= request.getContextPath() %>/HomeServlet" class="home-link">← Torna alla Home</a>
 </div>
 
