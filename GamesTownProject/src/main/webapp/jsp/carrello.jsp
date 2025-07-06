@@ -38,7 +38,7 @@
 %>
         <tr>
             <td data-label="Titolo"><%= videogioco.getTitolo() %></td>
-            <td data-label="Prezzo"><%= videogioco.getPrezzo() %>€</td>
+            <td data-label="Prezzo"><%= String.format("%.2f", videogioco.getPrezzo()) %>€</td>
             <td data-label="Quantità">
                 <form action="<%= request.getContextPath() %>/AggiornaQuantitaServlet" method="post" class="form-quantita">
                     <input type="hidden" name="id" value="<%= videogioco.getId() %>" />
@@ -59,7 +59,7 @@
 %>
         <tr class="total-row">
             <td colspan="3"><strong>Totale carrello</strong></td>
-            <td><%= carrello.getTotale() %>€</td>
+            <td><%= String.format("%.2f", carrello.getTotale()) %>€</td>
             <td>
                 <form action="<%= request.getContextPath() %>/SvuotaCarrelloServlet" method="post" class="form-svuota">
                     <button type="submit">Svuota carrello</button>

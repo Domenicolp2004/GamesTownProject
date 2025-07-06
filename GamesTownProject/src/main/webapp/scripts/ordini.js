@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (msg && msg.textContent.trim().length > 0) {
         msg.style.display = "block";
 
-        // Nasconde automaticamente dopo 5 secondi (opzionale)
+        // Nasconde automaticamente dopo 30 secondi (opzionale)
         setTimeout(() => {
             msg.style.display = "none";
-        }, 5000);
+        }, 30000);
     }
 });

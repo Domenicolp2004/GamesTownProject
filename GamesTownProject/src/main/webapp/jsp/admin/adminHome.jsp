@@ -12,13 +12,25 @@
     }
 
     // Controllo utente e token in sessione
-    if (utente == null 
-        || !"admin".equalsIgnoreCase(utente.getRuolo()) 
-        || sessionToken == null) {
+    if (utente == null) {
+        // L'utente non ha fatto login → vai alla login con messaggio
+        response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
+        return;
+    }
+
+    if (!"admin".equalsIgnoreCase(utente.getRuolo())) {
+        // L'utente è loggato ma non è admin (pagina di accesso negato)
+        response.sendRedirect(request.getContextPath() + "/jsp/accessoNegato.jsp");
+        return;
+    }
+
+    if (sessionToken == null) {
+        // Sessione priva di token valido
         response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
         return;
     }
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
