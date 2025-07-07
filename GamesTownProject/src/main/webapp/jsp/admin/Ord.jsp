@@ -23,6 +23,7 @@
 <html>
 <head>
     <title>Ordini</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/login.css">
     <script src="<%= request.getContextPath() %>/scripts/adminOrdini.js" defer></script>
 </head>
@@ -59,7 +60,7 @@
         <%      }
             } else{
         %>  <tr>
-                <td colspan="4" style="text-align:center;">Nessun ordine trovato per i criteri selezionati.</td>
+                <td colspan="4" class=nulla>Nessun ordine trovato per i criteri selezionati.</td>
             </tr>
         <%
             }

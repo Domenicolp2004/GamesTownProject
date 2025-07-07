@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- VALIDAZIONE FORM ORDINE ---
+    // VALIDAZIONE FORM ORDINE 
     const formOrdine = document.querySelector(".form-ordine");
     if (formOrdine) {
         const inputIndirizzo = formOrdine.querySelector('#indirizzoSpedizione');

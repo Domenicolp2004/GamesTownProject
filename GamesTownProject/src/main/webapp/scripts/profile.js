@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             })
             .catch(() => {
-                // Gestisci eventuali errori di rete se vuoi
+                // Gestisco eventuali errori di rete
             });
     });
 

@@ -63,6 +63,10 @@ margin-top: 15px
 	
 }
 
+.nulla{
+	text-align:center;
+}
+
 .home-link:hover {
     color: #00997f;
     text-decoration: underline;

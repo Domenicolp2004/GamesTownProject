@@ -16,6 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestione Catalogo - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/styles/admCatalogo.css">
     <script src="<%= request.getContextPath() %>/scripts/adminCatalogo.js"></script>
 </head>

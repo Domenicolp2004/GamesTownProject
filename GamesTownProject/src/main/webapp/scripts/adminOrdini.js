@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Validazione email (opzionale se inserito)
+        // Validazione email
         if (email && !validateEmail(email)) {
             alert('Inserisci un indirizzo email valido.');
             event.preventDefault();
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function validateEmail(email) {
-        // semplice regex per validare email
+        // regex per validare email
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email.toLowerCase());
     }

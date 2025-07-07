@@ -22,7 +22,7 @@
 	    <aside class="news-section">
         <h3>Perché sceglierci?</h3>
                   <div class="offerte-lamp">
-            🔥 <strong>I migliori titoli sul mercato</strong>
+            🔥 <strong>I migliori titoli</strong>
         </div>
           <div class="offerte-lamp">
             🔥 <strong>Prezzi Competitivi</strong>
@@ -93,13 +93,13 @@
     <aside class="news-section">
         <h3>Info sull'acquisto</h3>
             <div class="offerte-lamp">
-            🔥 <strong>Registrati per ordinare</strong>
+            🔥 <strong>Carta di Credito</strong>
         </div>
         <div class="offerte-lamp">
-            🔥 <strong>Pagamento alla Consegna</strong>
+            🔥 <strong>Contrassegno</strong>
         </div>
           <div class="offerte-lamp">
-            🔥 <strong>PayPal supportata</strong>
+            🔥 <strong>PayPal</strong>
         </div>
        
         
