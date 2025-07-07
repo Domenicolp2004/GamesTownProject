@@ -17,11 +17,11 @@
         return;
     }
     
-    String token = (String) session.getAttribute("token");
+    String token = (String) session.getAttribute("csrfToken");
 
     List<Ordine> ordini = (List<Ordine>) request.getAttribute("listaOrdini");
 
-    // Valori per mantenere i filtri compilati nel form
+    // Valori per mantenere i filtri compilati nel form, sotto csfr token nons erve (get)
     String clienteFiltro = request.getParameter("clienteFiltro") != null ? request.getParameter("clienteFiltro") : "";
     String dataInizio = request.getParameter("dataInizio") != null ? request.getParameter("dataInizio") : "";
     String dataFine = request.getParameter("dataFine") != null ? request.getParameter("dataFine") : "";
@@ -38,8 +38,7 @@
     <h1>Visualizza Ordini</h1>
     <a href="<%= request.getContextPath() %>/jsp/admin/adminHome.jsp"  class="home-link">Torna alla Home Admin</a>
 
-<form method="get" action="<%= request.getContextPath() %>/AdminOrdiniServlet">
-    <input type="hidden" name="token" value="<%= session.getAttribute("token") %>" />
+<form method="get" action="<%= request.getContextPath() %>/AdminOrdiniServlet"> 
     Cliente (email): <input type="text" name="clienteFiltro" value="<%= clienteFiltro %>" />
     Data Inizio: <input type="date" name="dataInizio" value="<%= dataInizio %>" />
     Data Fine: <input type="date" name="dataFine" value="<%= dataFine %>" />

@@ -56,8 +56,8 @@ public class AdminCatalogoServlet extends HttpServlet {
         }
 
         // Controllo CSRF token
-        String sessionToken = (String) session.getAttribute("token");
-        String requestToken = request.getParameter("token");
+        String sessionToken = (String) session.getAttribute("csrfToken");
+        String requestToken = request.getParameter("csrfToken");
         if (sessionToken == null || !sessionToken.equals(requestToken)) {
             response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
             return;

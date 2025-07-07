@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         clearError(select);
         return true;
     }
+	
+	
 
     // --- VALIDAZIONE FORM QUANTITÀ ---
     document.querySelectorAll(".form-quantita").forEach(form => {

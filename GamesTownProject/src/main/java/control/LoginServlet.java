@@ -34,8 +34,8 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("utente", utente);
 
                 // Genera un token unico per la sessione
-                String token = UUID.randomUUID().toString();
-                session.setAttribute("token", token); 
+                String csrfToken = UUID.randomUUID().toString();
+                session.setAttribute("csrfToken", csrfToken);
 
                 // Redirect senza passare il token in URL
                 if ("admin".equalsIgnoreCase(utente.getRuolo())) {

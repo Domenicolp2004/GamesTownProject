@@ -4,7 +4,7 @@
 <%@ page session="true" %>
 <%
     Utente utente = (Utente) session.getAttribute("utente");
-    String token = (String) session.getAttribute("token");
+	String token = (String) session.getAttribute("csrfToken");
 
     if (utente == null || !"admin".equalsIgnoreCase(utente.getRuolo()) || token == null) {
         response.sendRedirect(request.getContextPath() + "/jsp/login.jsp?accessDenied=true");
@@ -27,7 +27,7 @@
     <h2>Inserisci Nuovo Videogioco</h2>
     <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post">
         <input type="hidden" name="action" value="insert" />
-        <input type="hidden" name="token" value="<%= token %>" />
+       <input type="hidden" name="csrfToken" value="<%= session.getAttribute("csrfToken") %>" />
         Titolo: <input type="text" name="titolo" required /><br/>
         Descrizione: <textarea name="descrizione"></textarea><br/>
         Prezzo: <input type="number" step="0.01" name="prezzo" required /><br/>
@@ -46,7 +46,7 @@
     %>
         <form action="<%= request.getContextPath() %>/AdminCatalogoServlet" method="post" class="cat">
             <input type="hidden" name="id" value="<%= gioco.getId() %>" />
-            <input type="hidden" name="token" value="<%= token %>" />
+            <input type="hidden" name="csrfToken" value="<%= session.getAttribute("csrfToken") %>" />
             Titolo: <input type="text" name="titolo" value="<%= gioco.getTitolo() %>" required /><br/>
             Descrizione: <textarea name="descrizione"><%= gioco.getDescrizione() %></textarea><br/>
             Prezzo: <input type="number" step="0.01" name="prezzo" value="<%= gioco.getPrezzo() %>" required /><br/>

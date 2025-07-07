@@ -2,8 +2,8 @@
 <%@ page import="model.Utente" %>
 <%
     Utente utente = (Utente) session.getAttribute("utente");
-    String sessionToken = (String) session.getAttribute("token");
-    String requestToken = request.getParameter("token");
+String sessionToken = (String) session.getAttribute("csrfToken");
+String requestToken = request.getParameter("csrfToken");
 
     // Se arriva un token da URL (solo al primo accesso dopo il login), salvalo in sessione
     if (requestToken != null && sessionToken == null) {
@@ -41,9 +41,16 @@
 <body>
     <h1>Benvenuto Admin, <%= utente.getNome() %></h1>
     <ul>
-        <li><a href="<%= request.getContextPath() %>/AdminCatalogoServlet?token=<%= session.getAttribute("token") %>">Gestione Catalogo</a></li>
-        <li><a href="<%= request.getContextPath() %>/AdminOrdiniServlet?token=<%= session.getAttribute("token") %>">Gestione Ordini</a></li>
-        <li><a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a></li>
-    </ul>
+<ul>
+    <li><a href="<%= request.getContextPath() %>/AdminCatalogoServlet">Gestione Catalogo</a></li>
+    <li><a href="<%= request.getContextPath() %>/AdminOrdiniServlet">Gestione Ordini</a></li>
+    <li><a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a></li>
+</ul>
+<%-- mostrare token su URL
+<li><a href="<%= request.getContextPath() %>/AdminCatalogoServlet?csrfToken=<%= session.getAttribute("csrfToken") %>">Gestione Catalogo</a></li>
+<li><a href="<%= request.getContextPath() %>/AdminOrdiniServlet?csrfToken=<%= session.getAttribute("csrfToken") %>">Gestione Ordini</a></li>
+<li><a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a></li>
+--%>
+    
 </body>
 </html>
