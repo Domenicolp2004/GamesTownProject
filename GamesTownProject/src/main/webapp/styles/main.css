@@ -1,9 +1,13 @@
 /* ------------------- BASE ------------------- */
+html, body {
+    height: 100%;
+}
 
 body {
     margin: 0;
     font-family: 'Orbitron', sans-serif;
     background-color: #121212;
+     overflow-x: hidden;
     color: #e0e0e0;
 }
 
@@ -57,7 +61,7 @@ footer {
 
 .main-content {
     padding: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
     background-color: #121212;
 }
 
@@ -326,6 +330,16 @@ button:hover, .dropbtn:hover {
     color: #e0e0e0;
 }
 
+.left-sidebar {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.right-sidebar {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
 .prodotto.notizia:hover {
     transform: translateY(-5px);
     box-shadow: 0 14px 38px rgba(0,191,165,0.6);
@@ -362,19 +376,32 @@ button:hover, .dropbtn:hover {
 @media (max-width: 992px) {
     .container {
         grid-template-columns: 1fr;
+         overflow-x: hidden; 
         grid-template-rows: auto 1fr auto;
         height: auto;
         padding: 10px;
     }
 
-    .news-section {
-        grid-column: auto;
-        grid-row: auto;
-        width: 100%;
-        margin-top: 20px;
-        max-height: 300px; /* scroll verticale */
-    }
+   .news-section {
+    width: 90%;
+    margin: 20px auto;
+    max-height: none;
+     box-sizing: border-box;     
+        overflow-x: hidden; 
+}
 
+.left-news, .right-news {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+      box-sizing: border-box; 
+}
+
+.right-news {
+    margin-top: 40px;
+    
+}
+   
     .topnav {
         flex-direction: column;
         align-items: flex-start;
@@ -388,9 +415,13 @@ button:hover, .dropbtn:hover {
         width: 100%;
     }
 
-    .topnav-right {
-        justify-content: flex-start;
-    }
+   .topnav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+    gap: 12px;            
+    min-width: 200px;     
+}
 
     .catalogo {
         justify-content: center;
@@ -406,8 +437,11 @@ button:hover, .dropbtn:hover {
     }
 }
 
-@media (max-width: 600px) {
-    .prodotto {
+
+    
+    @media (max-width: 600px) {
+    
+        .prodotto {
         width: 100%; /* un prodotto per riga */
     }
 
@@ -433,7 +467,6 @@ button:hover, .dropbtn:hover {
         justify-content: center;
     }
     
-    @media (max-width: 600px) {
     .categoria-filter {
         flex-direction: column;
         align-items: stretch;
@@ -454,7 +487,7 @@ button:hover, .dropbtn:hover {
         padding: 0 10px;
     }
 }
-}
+
 
 
 #categoriaSelect {

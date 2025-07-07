@@ -11,7 +11,7 @@
 
 <form id="loginForm" action="<%= request.getContextPath() %>/LoginServlet" method="post">
     <div class="container">
-        <h1 align="center">Accedi</h1>
+        <h1>Accedi</h1>
 <label for="email"><b>Email</b></label>
 <input type="email" placeholder="Email" name="email" id="email" required>
 <span id="emailError" class="error-message"></span>

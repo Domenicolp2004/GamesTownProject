@@ -19,7 +19,7 @@
 <div class="container">
 
     <div class="sidebar">
-	    <aside class="news-section">
+	    <aside class="news-section left-news">
         <h3>Perché sceglierci?</h3>
                   <div class="offerte-lamp">
             🔥 <strong>I migliori titoli</strong>
@@ -89,8 +89,8 @@
 
     </main>
 
-   <div>
-    <aside class="news-section">
+   <div class="sidebar">
+    <aside class="news-section right-news">
         <h3>Info sull'acquisto</h3>
             <div class="offerte-lamp">
             🔥 <strong>Carta di Credito</strong>
@@ -106,6 +106,7 @@
     </aside>
 
 </div>
+   
     <%@ include file="footer.jsp" %>
 
 </div>
